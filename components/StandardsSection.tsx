@@ -6,9 +6,9 @@ import { ArrowRight } from 'lucide-react'
 const standards = [
   {
     flag: '🇯🇵',
-    title: '日本 JMGA 標準',
-    subtitle: '日本食肉格付協會 · 牛枝肉取引規格',
-    description: '日本官方肉品分級制度，以步留等級(A-C)與肉質等級(1-5)組合，共15種等級。評估項目包含脂肪交雜(BMS)、肉色澤(BCS)、肉緊實度與脂肪色澤(BFS)。',
+    title: '日本和牛分級',
+    subtitle: 'JMGA 日本食肉格付協會',
+    description: '世界最嚴格的牛肉分級制度，以步留等級(A-C)與肉質等級(1-5)組合成15種等級。A5為最高等級，BMS油花分數可達8-12級。',
     grades: [
       ['步留\\肉質', '5', '4', '3', '2', '1'],
       ['A', 'A5', 'A4', 'A3', 'A2', 'A1'],
@@ -17,36 +17,36 @@ const standards = [
     ],
   },
   {
-    flag: '🇦🇺',
-    title: '澳洲 AUS-MEAT 標準',
-    subtitle: '澳洲肉類規格管理局 · 牛肉分級系統',
-    description: '澳洲統一肉品分級制度，以0-9級評估大理石紋脂肪分布。等級越高代表脂肪交雜越均勻細緻。另有MSA指數(33-81+)評估食用品質。',
-    grades: [
-      ['等級', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      ['大理石紋', '微量', '微量', '少量', '少量', '中量', '中量', '中量', '多量', '多量', '極多'],
-      ['特點', '精瘦', '精瘦', '基本', '基本', '風味', '風味', '風味', '多汁', '多汁', '極致'],
-    ],
-  },
-  {
-    flag: '🥩',
-    title: '澳洲和牛分級標準',
-    subtitle: 'Australian Wagyu · 澳洲和牛協會',
-    description: '澳洲和牛專屬分級，結合AUS-MEAT與日本BMS評分。大理石紋評分從4到12級，對應日本JMGA的BMS 3-12級。澳洲和牛以穀飼天數與大理石紀錄雙重認證。',
-    grades: [
-      ['澳洲和牛', 'M4', 'M5', 'M6', 'M7', 'M8', 'M9', 'M10', 'M11', 'M12'],
-      ['日式BMS', '3', '4', '5', '6', '7', '8', '9', '10', '11-12'],
-      ['油花密度', '中下', '中等', '中上', '多量', '多量', '極多', '極多', '極致', '極致'],
-    ],
-  },
-  {
     flag: '🇺🇸',
-    title: '美國 USDA 標準',
-    subtitle: '美國農業部 · 牛肉品質等級',
-    description: '美國官方牛肉分級制度，以成熟度與大理石紋為主要評估依據。Prime等級僅占約2%，為最高品質；另有CAB(Certified Angus Beef)安格斯牛肉認證標準。',
+    title: '美國牛肉分級',
+    subtitle: 'USDA 美國農業部官方分級',
+    description: '以成熟度與大理石紋為主要評估依據，共分8級。Prime僅佔總產量2-3%，為最高等級；Choice是CP值最高的選擇。',
     grades: [
-      ['USDA等級', 'Prime', 'Choice', 'Select', 'Standard'],
-      ['中文', '極佳級', '特選級', '可選級', '標準級'],
-      ['特色', '最高品質', '高品質', '標準品質', '基本品質'],
+      ['等級', 'Prime', 'Choice', 'Select', 'Standard'],
+      ['油花', '極豐富', '豐富', '少量', '稀少'],
+      ['用途', '牛排', '牛排', '快炒', '燉煮'],
+    ],
+  },
+  {
+    flag: '🇦🇺',
+    title: '澳洲和牛分級',
+    subtitle: 'AUS-MEAT 澳洲肉類規格局',
+    description: '以油花分佈決定等級，官方分級M1-M9，市場上有M10-M12。M12約等同日本和牛A5等級。',
+    grades: [
+      ['等級', 'M4-5', 'M6-7', 'M8-9', 'M10-12'],
+      ['油花', '中量', '多量', '極多', '極致'],
+      ['日式對應', 'A3', 'A4', 'A5', 'A5頂級'],
+    ],
+  },
+  {
+    flag: '🍁',
+    title: '加拿大牛肉分級',
+    subtitle: 'Canada Beef 加拿大牛肉協會',
+    description: '分級制度與美國類似，但只有4個等級。評定標準為油花顏色品質、肉質色澤和結實度。',
+    grades: [
+      ['等級', 'Prime', 'AAA', 'AA', 'A'],
+      ['油花', '極豐富', '豐富', '中量', '少量'],
+      ['美國對應', 'Prime', 'Choice', 'Select', 'Standard'],
     ],
   },
 ]
@@ -60,7 +60,7 @@ export default function StandardsSection() {
           <span className="absolute bottom-0 left-0 w-14 sm:w-16 h-1 gradient-meat rounded-full"></span>
         </h2>
         <a href="#" className="text-primary text-sm font-medium flex items-center gap-1 hover:gap-2 transition-all">
-          詳細規格說明 <ArrowRight size={16} />
+          詳細說明 <ArrowRight size={16} />
         </a>
       </div>
 
@@ -73,7 +73,7 @@ export default function StandardsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             whileHover={{ y: -5 }}
-            className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-9 shadow-card hover:shadow-card-hover transition-all"
+            className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-card hover:shadow-card-hover transition-all"
           >
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-cream rounded-full flex items-center justify-center text-xl sm:text-2xl">
@@ -90,7 +90,7 @@ export default function StandardsSection() {
             </p>
 
             <div className="overflow-x-auto">
-              <table className="w-full text-xs sm:text-sm border-collapse min-w-[400px]">
+              <table className="w-full text-xs sm:text-sm border-collapse min-w-[360px]">
                 <tbody>
                   {standard.grades.map((row, rowIndex) => (
                     <tr key={rowIndex}>
@@ -100,12 +100,10 @@ export default function StandardsSection() {
                           className={`py-2 sm:py-2.5 px-2 sm:px-3 text-center border border-light-gray whitespace-nowrap ${
                             rowIndex === 0 || cellIndex === 0
                               ? 'bg-cream font-semibold'
-                              : cell.includes('A') || cell.includes('Prime')
+                              : cell.includes('A5') || cell.includes('Prime') || cell.includes('M10') || cell.includes('M11') || cell.includes('M12')
                               ? 'bg-green-50 text-green-700 font-medium'
-                              : cell.includes('M4') || cell.includes('M5') || cell.includes('M6')
+                              : cell.includes('M8') || cell.includes('M9')
                               ? 'bg-amber-50 text-amber-700'
-                              : cell.includes('M9') || cell.includes('M10') || cell.includes('M11') || cell.includes('M12')
-                              ? 'bg-red-50 text-red-700 font-medium'
                               : ''
                           }`}
                         >
@@ -119,6 +117,64 @@ export default function StandardsSection() {
             </div>
           </motion.div>
         ))}
+      </div>
+
+      {/* 等級對照表 */}
+      <div className="mt-8 sm:mt-12 bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-card">
+        <h3 className="font-serif-tc text-lg sm:text-xl text-charcoal mb-4 sm:mb-6 flex items-center gap-2">
+          <span>📊</span> 各國牛肉等級對照參考
+        </h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs sm:text-sm border-collapse min-w-[500px]">
+            <thead>
+              <tr className="bg-cream">
+                <th className="py-3 px-4 text-left font-semibold">國家</th>
+                <th className="py-3 px-4 text-center font-semibold">最高等級</th>
+                <th className="py-3 px-4 text-center font-semibold">次高等級</th>
+                <th className="py-3 px-4 text-center font-semibold">標準等級</th>
+                <th className="py-3 px-4 text-left font-semibold">特色</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-light-gray">
+                <td className="py-3 px-4 font-medium">🇯🇵 日本</td>
+                <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-green-100 text-green-700 rounded">A5</span></td>
+                <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-amber-100 text-amber-700 rounded">A4</span></td>
+                <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-gray-100 text-gray-700 rounded">A3</span></td>
+                <td className="py-3 px-4 text-warm-gray">15級分類，BMS 8-12</td>
+              </tr>
+              <tr className="border-b border-light-gray">
+                <td className="py-3 px-4 font-medium">🇺🇸 美國</td>
+                <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-green-100 text-green-700 rounded">Prime</span></td>
+                <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-amber-100 text-amber-700 rounded">Choice</span></td>
+                <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-gray-100 text-gray-700 rounded">Select</span></td>
+                <td className="py-3 px-4 text-warm-gray">8級分類，僅2-3%為Prime</td>
+              </tr>
+              <tr className="border-b border-light-gray">
+                <td className="py-3 px-4 font-medium">🇦🇺 澳洲</td>
+                <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-green-100 text-green-700 rounded">M9-12</span></td>
+                <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-amber-100 text-amber-700 rounded">M6-8</span></td>
+                <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-gray-100 text-gray-700 rounded">M4-5</span></td>
+                <td className="py-3 px-4 text-warm-gray">和牛分級，M12≈A5</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">🍁 加拿大</td>
+                <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-green-100 text-green-700 rounded">Prime</span></td>
+                <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-amber-100 text-amber-700 rounded">AAA</span></td>
+                <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-gray-100 text-gray-700 rounded">AA</span></td>
+                <td className="py-3 px-4 text-warm-gray">4級分類，類似美國</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-4 text-xs text-warm-gray">※ 對照表僅供參考，實際等級判定以各國官方標準為準</p>
+      </div>
+
+      {/* 小提醒 */}
+      <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-800">
+        <strong>💡 選購建議：</strong> 
+        牛肉等級越高不代表一定越適合您。日本和牛A5油花豐富，但連吃多塊可能會膩；
+        澳洲/紐西蘭草飼牛油花較少，風味清香。選擇適合自己口味與烹調方式的等級才是最佳選擇！
       </div>
     </section>
   )
