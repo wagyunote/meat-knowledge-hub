@@ -33,7 +33,7 @@ export default function Header() {
   const navItems = [
     { label: '產業新聞', href: '#news' },
     { label: '知識百科', href: '#knowledge' },
-    { label: '市場資訊', href: '#markets' },
+    { label: '日本牛肉設施', href: '#markets' },
     { label: '分級標準', href: '#standards' },
     { label: '常見問題', href: '#faq' },
     { label: '澳洲工廠', href: '#au-factories' },

@@ -1,0 +1,377 @@
+{
+  "facilities": [
+    {
+      "id": "JP-BEEF-1",
+      "ref": 1,
+      "code": "HO-1",
+      "name": "HOKKAIDOLIVESTOCKCORPORATIONCO., LTD.HAYAKITAFACTORYHAYAKITAMEAT DISTRIBUTIONCENTER",
+      "address": "695,Toasa,Abira-cho,Yuufutu-gun,Hokkaido",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-2",
+      "ref": 2,
+      "code": "HO-2",
+      "name": "HOKKAIDOLIVESTOCKCORPORATIONCO.,LTD. KITAMIFACTORYKITAMIDISTRICTGENERAL MEATDISTRIBUTIONCENTER",
+      "address": "72-1,ChigusaHigashimokoto,Ohzora-cho,Abashiri- gun,Hokkaido",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-3",
+      "ref": 3,
+      "code": "HO-3",
+      "name": "HOKKAIDOLIVESTOCKCORPORATIONCO.,LTD. TOKACHIFACTORYTOKACHIGENERALMEAT DISTRIBUTIONCENTER（Secondplant）",
+      "address": "1-1,Kita2-chome,Nishi24-jo,Obihiro-City,Hokkaido",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-4",
+      "ref": 4,
+      "code": "AC-1",
+      "name": "HOKKAIDO+C8:F23LIVESTOCKCORPORATIONCO., LTD. KAMIKAWAFACTORYKAMIKAWAGENERAL MEATDISTRIBUTIONCENTER",
+      "address": "6Sen-12Gou,Higasitakasu,Asahikawa-Shi,Hokkaido",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-5",
+      "ref": 5,
+      "code": "I-1",
+      "name": "IWACHIKU Co.,Ltd.",
+      "address": "120Minami-yachi,Inubuchi,Shiwa-cho,Shiwa- gun,Iwate",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-6",
+      "ref": 6,
+      "code": "AKC-1",
+      "name": "AkitaPrefectureMeatProcessingCenter",
+      "address": "2-1DosakaJinnaiKawabe,Akitacity,Akita",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-7",
+      "ref": 7,
+      "code": "YamagataCity1",
+      "name": "YamagataPrefecturemeatdistributioncenter",
+      "address": "936,Matoba,Nakano,Yamagata-city,Yamagata Prefecture",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-8",
+      "ref": 8,
+      "code": "KOC-1",
+      "name": "KoshigayaMeatCenter",
+      "address": "1-12,Mashimori,Koshigaya-city,Saitama",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-9",
+      "ref": 9,
+      "code": "GI-1",
+      "name": "HidaMeatCenter",
+      "address": "327Youka-machi,Takayama-shi,Gifu",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-10",
+      "ref": 10,
+      "code": "S-1",
+      "name": "ShigaMeatCenter",
+      "address": "1089-4Chokojicho,Omihachimancity,ShigaPref.",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-11",
+      "ref": 11,
+      "code": "HMJ-1",
+      "name": "WagyuMasterMeatCenter",
+      "address": "1451-5,Togo-cho,HimejiCity,HyogoPrefecture",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-12",
+      "ref": 12,
+      "code": "KOBE-1",
+      "name": "KobeCityMeatCenter",
+      "address": "7-1-20,Karumo-dori,Nagata-ku,Kobe",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-13",
+      "ref": 13,
+      "code": "TOKU-2",
+      "name": "NISHIAWABEEFLTD.",
+      "address": "Ashiro890-3,Higashimiyoshi-cho,Miyoshi-gun, Tokushima",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-14",
+      "ref": 14,
+      "code": "OI-1",
+      "name": "OITAKENCHIKUSANKOSYACO.,LTD",
+      "address": "1580-29 Tahara,Inukaimachi,BungoonoCity,Oita Prefecture",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-15",
+      "ref": 15,
+      "code": "KU-2",
+      "name": "KumamotoChikusanRyutsuCenterCo.Ltd",
+      "address": "9Hayashibaru,Shichijyo-machi,Kikuchi-shi, Kumamoto",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-16",
+      "ref": 16,
+      "code": "M-1",
+      "name": "Miyachiku Corp.,Ltd.Takasakiplant",
+      "address": "4268-1,Omuta,Takasaki-cho,Miyakonojyo-shi, Miyazaki",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-17",
+      "ref": 17,
+      "code": "M-5",
+      "name": "MiyachikuCorp.,Ltd.TsunoPlant",
+      "address": "15530,Kawakita,Tsuno-cho,Koyu-gun,Miyazaki",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-18",
+      "ref": 18,
+      "code": "K-1",
+      "name": "NANCHIKUCO.,LTD.",
+      "address": "1828,Ninokata,Sueyoshi-cho,Soo-shi,Kagoshima",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-19",
+      "ref": 19,
+      "code": "K-2",
+      "name": "SANKYOMEATINC.AriakeMeatPlant",
+      "address": "6965,Noikura,Ariake-cho,Shibushi-shi,Kagoshima",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-20",
+      "ref": 20,
+      "code": "K-3",
+      "name": "AkuneMeatDistributionCenterCo.,Ltd.",
+      "address": "",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-21",
+      "ref": 21,
+      "code": "K-4",
+      "name": "JAShokunikuKagoshimaCo.,Ltd.NansatuPlant",
+      "address": "",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-22",
+      "ref": 22,
+      "code": "HOK-1",
+      "name": "HOKKAIDOLIVESTOCKCORPORATIONCO.,LTD. TOKACHIFACTORYTOKACHIGENERALMEAT DISTRIBUTIONCENTER(Thirdplant)",
+      "address": "",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-23",
+      "ref": 23,
+      "code": "KY-1",
+      "name": "KyotoCitySlaughterhouse",
+      "address": "",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-24",
+      "ref": 24,
+      "code": "TOC-1",
+      "name": "TochigiMeatCenter",
+      "address": "",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-25",
+      "ref": 25,
+      "code": "KU-3",
+      "name": "KumamotoChuoMeatCenterCo.,Ltd",
+      "address": "",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-26",
+      "ref": 26,
+      "code": "KC-1",
+      "name": "KagoshimaMeatCenter",
+      "address": "",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-27",
+      "ref": 27,
+      "code": "OS-1",
+      "name": "THEDAIWACO.,LTDIzumiFactory",
+      "address": "",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-28",
+      "ref": 28,
+      "code": "AO-2",
+      "name": "STARZENMEATPROCESSORCo.Ltd.AomoriPlantSannohe BeefCenter",
+      "address": "",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-29",
+      "ref": 29,
+      "code": "SK-01",
+      "name": "THEDAIWACO.,LTDHeadSakaiFactory (2025年1月1日使用新名稱)",
+      "address": "",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-30",
+      "ref": 30,
+      "code": "G-1",
+      "name": "Gunma-KenShokunikuOroshiuriShijoCo.,Ltd",
+      "address": "",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-31",
+      "ref": 31,
+      "code": "KNP-2",
+      "name": "JAZEN-NOHMEATFOODSCO.,LTD.East JapanSalesHeadquartersYamatoMeatDelicaFactory",
+      "address": "",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-32",
+      "ref": 32,
+      "code": "SAG-1",
+      "name": "GeneralIncorporatedAssociationSagaPrefectureLivestock Corporation",
+      "address": "",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-33",
+      "ref": 33,
+      "code": "TP-1",
+      "name": "Starzenco.,LtdNasuPlant",
+      "address": "",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-34",
+      "ref": 34,
+      "code": "AO-4",
+      "name": "IHMEAT",
+      "address": "PACKERINC.TowadaBeefPlant",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-35",
+      "ref": 35,
+      "code": "TOH-01",
+      "name": "StarzenCo",
+      "address": ".,Ltd.TagajoPC",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-36",
+      "ref": 36,
+      "code": "KOBE-3",
+      "name": "ITOHAM",
+      "address": "YONEKYUFOODSINC.ROKKOPLANT",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    },
+    {
+      "id": "JP-BEEF-37",
+      "ref": 37,
+      "code": "S-2",
+      "name": "BIWAKO",
+      "address": "FOODCo.,Ltd.",
+      "country": "Japan",
+      "product": "Beef",
+      "source": "日本牛肉核准輸入設施 (2026.3.10)"
+    }
+  ],
+  "lastUpdate": "2026-03-10",
+  "source": "日本牛肉核准輸入設施",
+  "total": 37
+}

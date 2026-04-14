@@ -2,79 +2,56 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react'
-import type { Market } from '@/types'
+import { ChevronLeft, ChevronRight, MapPin, Building2 } from 'lucide-react'
 
-const regions = ['全部地區', '東北', '關東', '中部', '近畿', '中國', '四國', '九州']
+interface Facility {
+  id: string
+  ref: number
+  code: string
+  name: string
+  address: string
+  country: string
+  product: string
+  source: string
+}
 
 export default function MarketsSection() {
-  const [markets, setMarkets] = useState<Market[]>([])
-  const [activeRegion, setActiveRegion] = useState('全部地區')
+  const [facilities, setFacilities] = useState<Facility[]>([])
   const [loading, setLoading] = useState(true)
   const [currentPage, setCurrentPage] = useState(1)
-  const itemsPerPage = 8
+  const itemsPerPage = 10
 
   useEffect(() => {
-    fetch('/data/markets.json')
+    fetch('/data/jp-beef-facilities.json')
       .then(res => res.json())
       .then(data => {
-        setMarkets(data.markets || [])
+        setFacilities(data.facilities || [])
         setLoading(false)
       })
       .catch(() => setLoading(false))
   }, [])
 
-  // 篩選市場
-  const filteredMarkets = activeRegion === '全部地區'
-    ? markets
-    : markets.filter(m => m.region === activeRegion)
-
-  // 分頁
-  const totalPages = Math.ceil(filteredMarkets.length / itemsPerPage)
-  const paginatedMarkets = filteredMarkets.slice(
+  const totalPages = Math.ceil(facilities.length / itemsPerPage)
+  const paginatedFacilities = facilities.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   )
-
-  // 切換地區時重置頁碼
-  useEffect(() => {
-    setCurrentPage(1)
-  }, [activeRegion])
 
   return (
     <section id="markets" className="mb-16 sm:mb-20">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-6 sm:mb-10">
         <h2 className="font-serif-tc text-2xl sm:text-3xl text-charcoal relative pb-3 sm:pb-4">
-          全國食肉市場
+          日本牛肉核准輸入設施
           <span className="absolute bottom-0 left-0 w-14 sm:w-16 h-1 gradient-meat rounded-full"></span>
         </h2>
-        <div className="text-sm text-warm-gray">
-          共 <span className="font-semibold text-primary">{markets.length}</span> 個市場
-          {activeRegion !== '全部地區' && (
-            <span> · {activeRegion} ({filteredMarkets.length}個)</span>
-          )}
+        <div className="text-sm text-warm-gray flex items-center gap-2">
+          <Building2 size={16} className="text-primary" />
+          共 <span className="font-semibold text-primary">{facilities.length}</span> 間工廠
+          <span className="text-xs bg-cream px-2 py-1 rounded-full">2026.3.10 更新</span>
         </div>
       </div>
 
       <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-10 shadow-card">
-        {/* Region Tabs */}
-        <div className="flex flex-wrap gap-2 mb-6 sm:mb-8 pb-4 border-b-2 border-light-gray">
-          {regions.map((region) => (
-            <button
-              key={region}
-              onClick={() => setActiveRegion(region)}
-              className={`px-4 sm:px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                activeRegion === region
-                  ? 'gradient-meat text-white'
-                  : 'text-warm-gray hover:bg-cream hover:text-primary'
-              }`}
-            >
-              {region}
-            </button>
-          ))}
-        </div>
-
-        {/* Markets Table */}
         {loading ? (
           <div className="space-y-4">
             {[1, 2, 3, 4].map((i) => (
@@ -87,42 +64,39 @@ export default function MarketsSection() {
               <table className="w-full min-w-[600px]">
                 <thead>
                   <tr className="border-b-2 border-light-gray">
-                    <th className="text-left py-3 sm:py-4 px-3 text-xs font-semibold text-warm-gray uppercase tracking-wider">市場名稱</th>
-                    <th className="text-left py-3 sm:py-4 px-3 text-xs font-semibold text-warm-gray uppercase tracking-wider">所在地</th>
-                    <th className="text-left py-3 sm:py-4 px-3 text-xs font-semibold text-warm-gray uppercase tracking-wider">荷受機關</th>
-                    <th className="text-left py-3 sm:py-4 px-3 text-xs font-semibold text-warm-gray uppercase tracking-wider">聯絡電話</th>
-                    <th className="text-left py-3 sm:py-4 px-3 text-xs font-semibold text-warm-gray uppercase tracking-wider">操作</th>
+                    <th className="text-left py-3 sm:py-4 px-3 text-xs font-semibold text-warm-gray uppercase tracking-wider w-16">序號</th>
+                    <th className="text-left py-3 sm:py-4 px-3 text-xs font-semibold text-warm-gray uppercase tracking-wider w-24">代碼</th>
+                    <th className="text-left py-3 sm:py-4 px-3 text-xs font-semibold text-warm-gray uppercase tracking-wider">工廠名稱</th>
+                    <th className="text-left py-3 sm:py-4 px-3 text-xs font-semibold text-warm-gray uppercase tracking-wider">地址</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {paginatedMarkets.map((market, index) => (
+                  {paginatedFacilities.map((facility, index) => (
                     <motion.tr
-                      key={market.id}
+                      key={facility.id}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      transition={{ delay: index * 0.03 }}
+                      transition={{ delay: index * 0.02 }}
                       className="border-b border-light-gray hover:bg-cream transition-colors"
                     >
                       <td className="py-4 sm:py-5 px-3">
-                        <div className="flex items-center gap-2">
-                          <span className="inline-block px-2 py-0.5 text-[10px] bg-cream text-primary rounded">
-                            {market.region}
-                          </span>
-                          <span className="font-semibold text-primary text-sm">{market.name}</span>
-                        </div>
+                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cream text-primary font-semibold text-sm">
+                          {facility.ref}
+                        </span>
                       </td>
-                      <td className="py-4 sm:py-5 px-3 text-sm text-warm-gray">{market.address}</td>
-                      <td className="py-4 sm:py-5 px-3 text-sm text-warm-gray">{market.organization}</td>
-                      <td className="py-4 sm:py-5 px-3 text-sm font-mono">{market.phone}</td>
                       <td className="py-4 sm:py-5 px-3">
-                        <a
-                          href={market.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-primary text-sm flex items-center gap-1 hover:underline"
-                        >
-                          官網 <ExternalLink size={12} />
-                        </a>
+                        <span className="px-3 py-1 rounded-lg bg-red-50 text-red-600 font-mono text-sm font-medium">
+                          {facility.code}
+                        </span>
+                      </td>
+                      <td className="py-4 sm:py-5 px-3 text-sm font-medium text-charcoal leading-relaxed">
+                        {facility.name}
+                      </td>
+                      <td className="py-4 sm:py-5 px-3 text-sm text-warm-gray leading-relaxed">
+                        <div className="flex items-start gap-2">
+                          <MapPin size={14} className="text-primary mt-0.5 flex-shrink-0" />
+                          <span>{facility.address}</span>
+                        </div>
                       </td>
                     </motion.tr>
                   ))}
@@ -168,6 +142,12 @@ export default function MarketsSection() {
             )}
           </>
         )}
+      </div>
+
+      {/* Info Box */}
+      <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-800">
+        <strong>資料來源：</strong> 日本牛肉核准輸入設施名單（台灣輸入查驗用），
+        最後更新日期 2026 年 3 月 10 日。實際核准狀況請以官方公告為準。
       </div>
     </section>
   )
