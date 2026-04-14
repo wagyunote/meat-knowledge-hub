@@ -1,83 +1,179 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { ChevronDown, Beef, Award, Globe2, TrendingUp } from 'lucide-react'
 
 export default function Hero() {
-  const stats = [
-    { number: '28', label: '食肉市場' },
-    { number: '15', label: '等級標準' },
-    { number: '50+', label: '知識文章' },
+  const features = [
+    { icon: Award, label: '官方認證', desc: '日本 JMGA 標準', color: 'from-red-500 to-red-600' },
+    { icon: Globe2, label: '全球設施', desc: '150+ 合格工廠', color: 'from-amber-500 to-amber-600' },
+    { icon: TrendingUp, label: '即時更新', desc: '每小時同步', color: 'from-green-500 to-green-600' },
   ]
 
-  const grades = [
-    { label: 'A5', desc: '最高等級', className: 'bg-gradient-to-br from-primary to-primary-light' },
-    { label: 'A4', desc: '極上等級', className: 'bg-gradient-to-br from-primary-light to-[#C44B5C]' },
-    { label: 'A3', desc: '上等級', className: 'bg-gradient-to-br from-[#C44B5C] to-[#D66878]' },
-  ]
+  const grades = ['A5', 'A4', 'A3', 'B5', 'B4']
 
   return (
-    <section className="mt-[104px] sm:mt-[120px] bg-gradient-to-br from-cream to-[#F5EDE5] py-16 sm:py-20 relative overflow-hidden">
-      {/* Background Decoration */}
-      <div className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] bg-primary/5 rounded-full blur-3xl"></div>
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+      {/* 動態背景 */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cream via-[#F5EDE5] to-cream"></div>
+      <div className="absolute -top-1/4 -right-1/4 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute -bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-amber-200/30 rounded-full blur-3xl"></div>
       
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-10">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Text Content */}
+      {/* 浮動等級標籤 */}
+      {grades.map((grade, i) => (
+        <motion.div
+          key={grade}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 0.15, scale: 1 }}
+          transition={{ delay: 0.5 + i * 0.1, duration: 0.5 }}
+          className="absolute text-6xl sm:text-8xl font-serif-tc font-bold text-primary/20 select-none"
+          style={{
+            top: `${15 + i * 18}%`,
+            right: `${5 + (i % 3) * 10}%`,
+          }}
+        >
+          {grade}
+        </motion.div>
+      ))}
+      
+      <div className="relative max-w-[1400px] mx-auto px-6 sm:px-10 py-20 sm:py-28 w-full">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          {/* 左側主視覺 */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex-1 text-center lg:text-left"
           >
-            <button className="px-6 sm:px-9 py-3 sm:py-4 rounded-full gradient-gold text-charcoal font-medium text-base hover:shadow-lg hover:-translate-y-1 transition-all">
-              開始探索
-            </button>
+            {/* 標籤 */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6"
+            >
+              <Beef className="w-4 h-4" />
+              專業肉品知識平台
+            </motion.div>
             
-            {/* Stats */}
-            <div className="flex gap-8 sm:gap-10 mt-8 sm:mt-12">
-              {stats.map((stat, index) => (
+            {/* 主標題 */}
+            <h1 className="font-serif-tc text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-charcoal leading-tight mb-6">
+              <span className="text-primary">肉品</span>分級
+              <br />
+              <span className="relative">
+                一手掌握
                 <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className="text-center"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 0.6, duration: 0.6 }}
+                  className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-amber-500 rounded-full origin-left"
+                />
+              </span>
+            </h1>
+            
+            {/* 副標題 */}
+            <p className="text-warm-gray text-lg sm:text-xl max-w-xl mb-8">
+              整合日本官方分級標準、全球合格設施名單
+              <br className="hidden sm:block" />
+              為您提供專業、即時的肉品產業資訊
+            </p>
+            
+            {/* CTA 按鈕 */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <motion.a
+                href="#standards"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-8 py-4 rounded-full gradient-meat text-white font-medium text-base shadow-lg hover:shadow-xl transition-shadow"
+              >
+                查看分級標準
+              </motion.a>
+              <motion.a
+                href="#markets"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-8 py-4 rounded-full bg-white text-primary font-medium text-base shadow-md hover:shadow-lg transition-shadow border border-primary/20"
+              >
+                查詢合格設施
+              </motion.a>
+            </div>
+          </motion.div>
+          
+          {/* 右側功能卡 */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex-1 w-full max-w-md"
+          >
+            <div className="space-y-4">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={feature.label}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 + index * 0.1 }}
+                  whileHover={{ x: 8, scale: 1.02 }}
+                  className="bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-shadow cursor-pointer group"
                 >
-                  <div className="font-serif-tc text-2xl sm:text-4xl font-bold text-primary">{stat.number}</div>
-                  <div className="text-xs sm:text-sm text-warm-gray mt-1">{stat.label}</div>
+                  <div className="flex items-center gap-4">
+                    <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform`}>
+                      <feature.icon className="w-6 h-6 sm:w-7 sm:h-7" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-charcoal text-lg">{feature.label}</div>
+                      <div className="text-warm-gray text-sm">{feature.desc}</div>
+                    </div>
+                    <div className="text-3xl">🥩</div>
+                  </div>
                 </motion.div>
               ))}
             </div>
-          </motion.div>
-
-          {/* Grade Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative z-10"
-          >
-            <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl">
-              <h3 className="font-serif-tc text-lg sm:text-xl text-primary mb-4 sm:mb-6 flex items-center gap-2">
-                <span>🎌</span> 日本和牛等級速查
-              </h3>
-              <div className="grid grid-cols-3 gap-3 sm:gap-4">
-                {grades.map((grade) => (
-                  <motion.div
-                    key={grade.label}
-                    whileHover={{ y: -5, scale: 1.02 }}
-                    className={`${grade.className} rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center text-white cursor-pointer transition-shadow hover:shadow-lg`}
-                  >
-                    <div className="font-serif-tc text-2xl sm:text-3xl font-bold">{grade.label}</div>
-                    <div className="text-xs sm:text-sm mt-1 opacity-90">{grade.desc}</div>
-                  </motion.div>
-                ))}
+            
+            {/* 統計數據 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+              className="mt-6 p-5 bg-primary/5 rounded-2xl border border-primary/10"
+            >
+              <div className="flex justify-around text-center">
+                <div>
+                  <div className="font-serif-tc text-3xl sm:text-4xl font-bold text-primary">151</div>
+                  <div className="text-xs text-warm-gray mt-1">合格設施</div>
+                </div>
+                <div className="w-px bg-primary/20"></div>
+                <div>
+                  <div className="font-serif-tc text-3xl sm:text-4xl font-bold text-primary">4</div>
+                  <div className="text-xs text-warm-gray mt-1">國家標準</div>
+                </div>
+                <div className="w-px bg-primary/20"></div>
+                <div>
+                  <div className="font-serif-tc text-3xl sm:text-4xl font-bold text-primary">24h</div>
+                  <div className="text-xs text-warm-gray mt-1">自動更新</div>
+                </div>
               </div>
-              <p className="mt-4 sm:mt-6 text-xs sm:text-sm text-warm-gray">
-                步留等級(A-C) × 肉質等級(1-5) = 15種組合
-              </p>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
+        
+        {/* 滾動提示 */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        >
+          <motion.a
+            href="#news"
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="flex flex-col items-center text-primary/60 hover:text-primary transition-colors"
+          >
+            <span className="text-xs mb-2">向下探索</span>
+            <ChevronDown className="w-5 h-5" />
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   )
