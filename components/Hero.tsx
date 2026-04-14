@@ -28,12 +28,6 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-serif-tc text-3xl sm:text-4xl lg:text-5xl font-bold text-primary leading-tight mb-4 sm:mb-6">
-              專業肉品知識<br />一手掌握
-            </h2>
-            <p className="text-base sm:text-lg text-warm-gray mb-6 sm:mb-8 max-w-lg">
-              整合日本官方肉品分級標準、全國食肉市場資訊、產業動態與專業知識，為您提供即時、準確的肉品產業資訊平台。
-            </p>
             <button className="px-6 sm:px-9 py-3 sm:py-4 rounded-full gradient-gold text-charcoal font-medium text-base hover:shadow-lg hover:-translate-y-1 transition-all">
               開始探索
             </button>
