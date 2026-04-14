@@ -7,7 +7,6 @@ import USFacilitiesSection from '@/components/USFacilitiesSection'
 import FAQSection from '@/components/FAQSection'
 import AUFactorySection from '@/components/AUFactorySection'
 import DataSourcesSection from '@/components/DataSourcesSection'
-import StockAnalysisSection from '@/components/StockAnalysisSection'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -40,9 +39,6 @@ export default function Home() {
           {/* 美國設施 */}
           <USFacilitiesSection />
         </section>
-        
-        {/* 台股分析 */}
-        <StockAnalysisSection />
         
         {/* 常見問題 */}
         <FAQSection />
