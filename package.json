@@ -1,0 +1,56 @@
+{
+  "name": "meat-knowledge-hub",
+  "version": "1.0.0",
+  "description": "整合日本官方肉品分級標準、全國食肉市場資訊、產業動態與專業知識的即時資訊平台",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "update-news": "node scripts/update-news.js",
+    "update-markets": "node scripts/update-markets.js",
+    "sync-all": "npm run update-news && npm run update-markets",
+    "setup": "bash install.sh",
+    "setup:win": "install.bat"
+  },
+  "keywords": [
+    "meat",
+    "beef",
+    "wagyu",
+    "japan",
+    "meat-market",
+    "JMGA",
+    "nextjs",
+    "rss"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rss-parser": "^3.13.0",
+    "date-fns": "^3.0.0",
+    "framer-motion": "^10.16.0",
+    "lucide-react": "^0.294.0",
+    "swr": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wagyunote/meat-knowledge-hub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wagyunote/meat-knowledge-hub/issues"
+  },
+  "homepage": "https://wagyunote.github.io/meat-knowledge-hub"
+}

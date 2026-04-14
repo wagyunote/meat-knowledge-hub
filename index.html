@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>肉品知識庫 | Meat Knowledge Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B2635;
+            --primary-dark: #6B1D29;
+            --secondary: #D4A574;
+            --accent: #2C5F2D;
+            --cream: #FDF8F3;
+            --warm-white: #FFFCF9;
+            --charcoal: #2D2D2D;
+            --warm-gray: #6B6B6B;
+            --light-gray: #E8E4E0;
+            --gradient-meat: linear-gradient(135deg, #8B2635 0%, #A63848 50%, #8B2635 100%);
+            --gradient-gold: linear-gradient(135deg, #D4A574 0%, #E8C99B 50%, #D4A574 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: var(--gradient-meat);
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(139, 38, 53, 0.3);
+        }
+
+        .header-top {
+            background: rgba(0,0,0,0.15);
+            padding: 8px 0;
+        }
+
+        .header-top-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .sync-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sync-dot {
+            width: 8px;
+            height: 8px;
+            background: #4CAF50;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .header-main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-gold);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            color: white;
+        }
+
+        .logo-text h1 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .logo-text span {
+            font-size: 12px;
+            opacity: 0.8;
+            letter-spacing: 3px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-gold);
+            color: var(--charcoal);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 120px;
+            background: linear-gradient(135deg, var(--cream) 0%, #F5EDE5 100%);
+            padding: 80px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(139, 38, 53, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h2 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: var(--warm-gray);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--warm-gray);
+            margin-top: 5px;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .grade-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .grade-card h3 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grade-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .grade-item {
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .grade-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 38, 53, 0.15);
+        }
+
+        .grade-item.a5 { background: linear-gradient(135deg, #8B2635 0%, #A63848 100%); color: white; }
+        .grade-item.a4 { background: linear-gradient(135deg, #A63848 0%, #C44B5C 100%); color: white; }
+        .grade-item.a3 { background: linear-gradient(135deg, #C44B5C 0%, #D66878 100%); color: white; }
+
+        .grade-label {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .grade-desc {
+            font-size: 12px;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 32px;
+            color: var(--charcoal);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-meat);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s ease;
+        }
+
+        .view-all:hover {
+            gap: 10px;
+        }
+
+        /* News Section */
+        .news-section {
+            margin-bottom: 80px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .news-image {
+            height: 180px;
+            background: var(--gradient-meat);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .news-content {
+            padding: 25px;
+        }
+
+        .news-category {
+            display: inline-block;
+            padding: 5px 12px;
+            background: var(--cream);
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .news-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--charcoal);
+            line-height: 1.5;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: var(--warm-gray);
+        }
+
+        .news-source {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .sync-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 8px;
+            background: #E8F5E9;
+            color: var(--accent);
+            font-size: 11px;
+            border-radius: 12px;
+        }
+
+        /* Knowledge Section */
+        .knowledge-section {
+            margin-bottom: 80px;
+        }
+
+        .knowledge-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .knowledge-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .knowledge-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .knowledge-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 20px;
+            transition: all 0.3s ease;
+        }
+
+        .knowledge-card:hover .knowledge-icon {
+            background: var(--gradient-meat);
+            transform: scale(1.1);
+        }
+
+        .knowledge-card:hover .knowledge-icon {
+            filter: brightness(0) invert(1);
+        }
+
+        .knowledge-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+        }
+
+        .knowledge-desc {
+            font-size: 13px;
+            color: var(--warm-gray);
+            line-height: 1.6;
+        }
+
+        /* Markets Section */
+        .markets-section {
+            margin-bottom: 80px;
+        }
+
+        .markets-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+        }
+
+        .region-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 15px;
+        }
+
+        .region-tab {
+            padding: 10px 24px;
+            background: transparent;
+            border: none;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--warm-gray);
+            cursor: pointer;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .region-tab.active {
+            background: var(--gradient-meat);
+            color: white;
+        }
+
+        .region-tab:hover:not(.active) {
+            background: var(--cream);
+            color: var(--primary);
+        }
+
+        .markets-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .markets-table th {
+            text-align: left;
+            padding: 15px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--warm-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .markets-table td {
+            padding: 20px 15px;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 14px;
+        }
+
+        .markets-table tr:hover td {
+            background: var(--cream);
+        }
+
+        .market-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .market-link {
+            color: var(--primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+        }
+
+        .market-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Standards Section */
+        .standards-section {
+            margin-bottom: 80px;
+        }
+
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .standard-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .standard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .standard-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .standard-flag {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: var(--cream);
+        }
+
+        .standard-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .standard-subtitle {
+            font-size: 13px;
+            color: var(--warm-gray);
+        }
+
+        .standard-content {
+            font-size: 14px;
+            color: var(--warm-gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .grade-table-mini {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .grade-table-mini th,
+        .grade-table-mini td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid var(--light-gray);
+        }
+
+        .grade-table-mini th {
+            background: var(--cream);
+            font-weight: 600;
+        }
+
+        .grade-a { background: #8B2635; color: white; }
+        .grade-b { background: #C44B5C; color: white; }
+        .grade-c { background: #E8A5AD; color: var(--charcoal); }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 80px;
+        }
+
+        .faq-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--light-gray);
+            padding: 25px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--charcoal);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-toggle {
+            width: 30px;
+            height: 30px;
+            background: var(--cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            background: var(--primary);
+            color: white;
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            color: var(--warm-gray);
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 20px;
+        }
+
+        /* Data Sources Section */
+        .sources-section {
+            background: linear-gradient(135deg, var(--charcoal) 0%, #1a1a1a 100%);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 80px;
+        }
+
+        .sources-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .sources-header h3 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 28px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .sources-header p {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+
+        .sources-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .source-item {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 25px 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .source-item:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+        }
+
+        .source-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .source-name {
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .source-status {
+            font-size: 12px;
+            color: #4CAF50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: white;
+            padding: 60px 40px 30px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h4 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.8;
+        }
+
+        .footer-links h5 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .knowledge-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .sources-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-main {
+                flex-direction: column;
+                gap: 20px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+            .hero-text h2 {
+                font-size: 36px;
+            }
+            .news-grid,
+            .knowledge-grid,
+            .standards-grid {
+                grid-template-columns: 1fr;
+            }
+            .sources-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="header-top-content">
+                <div class="sync-status">
+                    <span class="sync-dot"></span>
+                    <span>即時同步更新中 · 最後更新：2026/04/12 15:00</span>
+                </div>
+                <div>資料來源：日本食肉市場卸売協會 · 食肉通信社 · JMGA · 日本家畜改良中心</div>
+            </div>
+        </div>
+        <div class="header-main">
+            <a href="#" class="logo">
+                <div class="logo-icon">🥩</div>
+                <div class="logo-text">
+                    <h1>肉品知識庫</h1>
+                    <span>MEAT KNOWLEDGE HUB</span>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#news">產業新聞</a></li>
+                    <li><a href="#knowledge">知識百科</a></li>
+                    <li><a href="#markets">市場資訊</a></li>
+                    <li><a href="#standards">分級標準</a></li>
+                    <li><a href="#faq">常見問題</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">🔍 搜尋</button>
+                <button class="btn btn-primary">訂閱更新</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>專業肉品知識<br>一手掌握</h2>
+                <p>整合日本官方肉品分級標準、全國食肉市場資訊、產業動態與專業知識，為您提供即時、準確的肉品產業資訊平台。</p>
+                <button class="btn btn-primary" style="padding: 15px 35px; font-size: 16px;">開始探索</button>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">28</div>
+                        <div class="stat-label">食肉市場</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">等級標準</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">知識文章</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="grade-card">
+                    <h3>🎌 日本和牛等級速查</h3>
+                    <div class="grade-grid">
+                        <div class="grade-item a5">
+                            <div class="grade-label">A5</div>
+                            <div class="grade-desc">最高等級</div>
+                        </div>
+                        <div class="grade-item a4">
+                            <div class="grade-label">A4</div>
+                            <div class="grade-desc">極上等級</div>
+                        </div>
+                        <div class="grade-item a3">
+                            <div class="grade-label">A3</div>
+                            <div class="grade-desc">上等級</div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 20px; font-size: 13px; color: var(--warm-gray);">
+                        步留等級(A-C) × 肉質等級(1-5) = 15種組合
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- News Section -->
+        <section class="news-section" id="news">
+            <div class="section-header">
+                <h2 class="section-title">最新產業動態</h2>
+                <a href="#" class="view-all">查看全部 →</a>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image">🏆</div>
+                    <div class="news-content">
+                        <span class="news-category">品牌競賽</span>
+                        <h3 class="news-title">銘柄豬肉好感度競賽結果公布：國產「高座豚」、進口「みらいそだち 三元豚」獲選</h3>
+                        <div class="news-meta">
+                            <span class="news-source">📰 食肉通信社</span>
+                            <span class="sync-badge">● 即時同步</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-image">🎪</div>
+                    <div class="news-content">
+                        <span class="news-category">展會活動</span>
+                        <h3 class="news-title">第50回食肉產業展2026 在東京Big Sight盛大開幕，59社174攤位參展</h3>
+                        <div class="news-meta">
+                            <span class="news-source">📰 食肉通信社</span>
+                            <span class="sync-badge">● 即時同步</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-image">🐄</div>
+                    <div class="news-content">
+                        <span class="news-category">生產資訊</span>
+                        <h3 class="news-title">近江肉牛協會舉辦「近江牛BBQ祭in築地」推廣活動圓滿成功</h3>
+                        <div class="news-meta">
+                            <span class="news-source">📰 食肉通信社</span>
+                            <span class="sync-badge">● 即時同步</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Knowledge Section -->
+        <section class="knowledge-section" id="knowledge">
+            <div class="section-header">
+                <h2 class="section-title">肉品知識百科</h2>
+                <a href="#" class="view-all">查看全部 →</a>
+            </div>
+            <div class="knowledge-grid">
+                <div class="knowledge-card">
+                    <div class="knowledge-icon">🥩</div>
+                    <h3 class="knowledge-title">牛肉部位</h3>
+                    <p class="knowledge-desc">肩胛、肋脊、腰脊、後腿等七大部位特性與適合料理方式</p>
+                </div>
+                <div class="knowledge-card">
+                    <div class="knowledge-icon">🌡️</div>
+                    <h3 class="knowledge-title">熟度指南</h3>
+                    <p class="knowledge-desc">從一分熟到全熟，掌握專業牛排熟度判斷技巧</p>
+                </div>
+                <div class="knowledge-card">
+                    <div class="knowledge-icon">🌾</div>
+                    <h3 class="knowledge-title">飼育方式</h3>
+                    <p class="knowledge-desc">穀物飼養與草料飼養的差異與肉質特色比較</p>
+                </div>
+                <div class="knowledge-card">
+                    <div class="knowledge-icon">📦</div>
+                    <h3 class="knowledge-title">保存訣竅</h3>
+                    <p class="knowledge-desc">真空包裝原理與牛肉保鮮的最佳實務方法</p>
+                </div>
+                <div class="knowledge-card">
+                    <div class="knowledge-icon">🏷️</div>
+                    <h3 class="knowledge-title">分級標準</h3>
+                    <p class="knowledge-desc">日本JMGA、美國CAB等國際肉品分級制度解析</p>
+                </div>
+                <div class="knowledge-card">
+                    <div class="knowledge-icon">🍳</div>
+                    <h3 class="knowledge-title">料理技巧</h3>
+                    <p class="knowledge-desc">煎牛排要點、退冰方法與肉質軟化秘訣</p>
+                </div>
+                <div class="knowledge-card">
+                    <div class="knowledge-icon">🔍</div>
+                    <h3 class="knowledge-title">品質判斷</h3>
+                    <p class="knowledge-desc">如何辨識新鮮牛肉與避免變質肉品</p>
+                </div>
+                <div class="knowledge-card">
+                    <div class="knowledge-icon">🏭</div>
+                    <h3 class="knowledge-title">廠號查詢</h3>
+                    <p class="knowledge-desc">澳洲、美國肉品工廠代號識別與產地追蹤</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Markets Section -->
+        <section class="markets-section" id="markets">
+            <div class="section-header">
+                <h2 class="section-title">全國食肉市場</h2>
+                <a href="#" class="view-all">查看全部 28 個市場 →</a>
+            </div>
+            <div class="markets-container">
+                <div class="region-tabs">
+                    <button class="region-tab active">全部地區</button>
+                    <button class="region-tab">東北</button>
+                    <button class="region-tab">關東</button>
+                    <button class="region-tab">中部</button>
+                    <button class="region-tab">近畿</button>
+                    <button class="region-tab">中國</button>
+                    <button class="region-tab">四國</button>
+                    <button class="region-tab">九州</button>
+                </div>
+                <table class="markets-table">
+                    <thead>
+                        <tr>
+                            <th>市場名稱</th>
+                            <th>所在地</th>
+                            <th>荷受機關</th>
+                            <th>聯絡電話</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="market-name">仙台市中央卸売市場食肉市場</span></td>
+                            <td>仙台市宮城野区扇町6丁目3番6號</td>
+                            <td>仙台中央食肉卸売市場株式會社</td>
+                            <td>022-258-6011</td>
+                            <td><a href="https://mmb.jmma.or.jp/member/sendai/" target="_blank" class="market-link">官網 →</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="market-name">東京都中央卸売市場食肉市場</span></td>
+                            <td>東京都港區港南2丁目7番19號</td>
+                            <td>東京食肉市場株式會社</td>
+                            <td>03-3740-3111</td>
+                            <td><a href="https://mmb.jmma.or.jp/member/tokyo/" target="_blank" class="market-link">官網 →</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="market-name">大阪中央卸売市場 南港市場</span></td>
+                            <td>大阪市住之江區南港南5丁目2番48號</td>
+                            <td>大阪市食肉市場株式會社</td>
+                            <td>06-6675-2110</td>
+                            <td><a href="https://mmb.jmma.or.jp/member/osaka/" target="_blank" class="market-link">官網 →</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="market-name">名古屋市中央卸売市場南部市場</span></td>
+                            <td>名古屋市港區船見町1番地之39</td>
+                            <td>名古屋食肉市場株式會社</td>
+                            <td>052-614-1129</td>
+                            <td><a href="https://mmb.jmma.or.jp/member/nagoya/" target="_blank" class="market-link">官網 →</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Standards Section -->
+        <section class="standards-section" id="standards">
+            <div class="section-header">
+                <h2 class="section-title">肉品分級標準</h2>
+                <a href="#" class="view-all">詳細規格說明 →</a>
+            </div>
+            <div class="standards-grid">
+                <div class="standard-card">
+                    <div class="standard-header">
+                        <div class="standard-flag">🇯🇵</div>
+                        <div>
+                            <h3 class="standard-title">日本 JMGA 標準</h3>
+                            <p class="standard-subtitle">日本食肉格付協會 · 牛枝肉取引規格</p>
+                        </div>
+                    </div>
+                    <p class="standard-content">
+                        日本官方肉品分級制度，以步留等級(A-C)與肉質等級(1-5)組合，共15種等級。評估項目包含脂肪交雜(BMS)、肉色澤(BCS)、肉緊實度與脂肪色澤(BFS)。
+                    </p>
+                    <table class="grade-table-mini">
+                        <tr>
+                            <th>步留\肉質</th>
+                            <th>5</th>
+                            <th>4</th>
+                            <th>3</th>
+                            <th>2</th>
+                            <th>1</th>
+                        </tr>
+                        <tr>
+                            <td class="grade-a">A</td>
+                            <td>A5</td>
+                            <td>A4</td>
+                            <td>A3</td>
+                            <td>A2</td>
+                            <td>A1</td>
+                        </tr>
+                        <tr>
+                            <td class="grade-b">B</td>
+                            <td>B5</td>
+                            <td>B4</td>
+                            <td>B3</td>
+                            <td>B2</td>
+                            <td>B1</td>
+                        </tr>
+                        <tr>
+                            <td class="grade-c">C</td>
+                            <td>C5</td>
+                            <td>C4</td>
+                            <td>C3</td>
+                            <td>C2</td>
+                            <td>C1</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="standard-card">
+                    <div class="standard-header">
+                        <div class="standard-flag">🇺🇸</div>
+                        <div>
+                            <h3 class="standard-title">美國 CAB 標準</h3>
+                            <p class="standard-subtitle">Certified Angus Beef · 安格斯牛肉認證</p>
+                        </div>
+                    </div>
+                    <p class="standard-content">
+                        美國安格斯肉牛協會(AAA)於1978年設立的認證標準，僅有約2%的牛肉能通過CAB嚴格標準。評估項目包含大理石紋脂肪、成熟度、肉色與脂肪色等10項標準。
+                    </p>
+                    <table class="grade-table-mini">
+                        <tr>
+                            <th>USDA 等級</th>
+                            <th>Prime</th>
+                            <th>Choice</th>
+                            <th>Select</th>
+                        </tr>
+                        <tr>
+                            <td>中文</td>
+                            <td>極佳級</td>
+                            <td>特選級</td>
+                            <td>可選級</td>
+                        </tr>
+                        <tr>
+                            <td>特色</td>
+                            <td>最高品質</td>
+                            <td>高品質</td>
+                            <td>標準品質</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="section-header">
+                <h2 class="section-title">常見問題 Q&A</h2>
+                <a href="#" class="view-all">查看全部 20+ 問答 →</a>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span>什麼是檢定安格斯牛肉(CAB)？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        檢定安格斯牛肉(Certified Angus Beef)是美國安格斯肉牛協會(AAA)註冊商標，1978年成立專案計畫。僅約50頭牛中有1頭能符合CAB嚴格標準，需具備黑色血統特徵並通過10項品質標準檢驗，與一般泛稱的「安格斯牛肉」有顯著差異。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>CL是什麼意思？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        CL是Chemical Lean(化學瘦肉率)的縮寫，表示瘦肉的比例。例如90CL代表90%是瘦肉、10%是脂肪。這是肉品工業常用的規格標示方式。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>牛肉熟度如何區分？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        牛排熟度大致分為：1-2分(Rare/生)、3-4分(Medium Rare/三分熟)、5-6分(Medium/五分熟)、7-8分(Medium Well/七分熟)、Well Done(全熟)。好的牛排建議越生越好，能保留更多肉汁與風味。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>穀物飼養與草料飼養有什麼差別？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        穀物飼養(Grain Feed)以玉米、小麥等五穀人工飼育，肉色櫻紅、油花均勻、肉質柔嫩；草料飼養(Grass Feed)以天然放牧，瘦肉較多、脂肪較少、低膽固醇。美國牛多為穀物飼養，澳洲牛則兩者皆有。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>真空包裝的牛肉為什麼呈暗紫色？</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        這是正常現象！真空包裝隔絕氧氣，牛肉中的肌紅蛋白處於缺氧狀態呈現暗紫色。拆封後接觸空氣約15-30分鐘會「紅潤化」(bloom)成鮮櫻桃紅色，代表牛肉新鮮。若變成暗褐色則表示放置過久。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Sources Section -->
+        <section class="sources-section">
+            <div class="sources-header">
+                <h3>🔄 即時同步資料來源</h3>
+                <p>本平台自動同步以下官方網站最新資訊</p>
+            </div>
+            <div class="sources-grid">
+                <div class="source-item">
+                    <div class="source-icon">🏪</div>
+                    <div class="source-name">食肉市場協會</div>
+                    <div class="source-status">● 同步中</div>
+                </div>
+                <div class="source-item">
+                    <div class="source-icon">📰</div>
+                    <div class="source-name">食肉通信社</div>
+                    <div class="source-status">● 同步中</div>
+                </div>
+                <div class="source-item">
+                    <div class="source-icon">📋</div>
+                    <div class="source-name">JMGA 格付協會</div>
+                    <div class="source-status">● 同步中</div>
+                </div>
+                <div class="source-item">
+                    <div class="source-icon">🧬</div>
+                    <div class="source-name">家畜改良中心</div>
+                    <div class="source-status">● 同步中</div>
+                </div>
+                <div class="source-item">
+                    <div class="source-icon">🌐</div>
+                    <div class="source-name">產業相關連結</div>
+                    <div class="source-status">● 同步中</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h4>🥩 肉品知識庫</h4>
+                <p>整合日本官方肉品分級標準、全國食肉市場資訊、產業動態與專業知識，為肉品產業從業人員與愛好者提供即時、準確的資訊平台。</p>
+            </div>
+            <div class="footer-links">
+                <h5>快速連結</h5>
+                <ul>
+                    <li><a href="#news">產業新聞</a></li>
+                    <li><a href="#knowledge">知識百科</a></li>
+                    <li><a href="#markets">市場資訊</a></li>
+                    <li><a href="#standards">分級標準</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>資料來源</h5>
+                <ul>
+                    <li><a href="https://mmb.jmma.or.jp/" target="_blank">食肉市場卸売協會</a></li>
+                    <li><a href="https://www.shokuniku.co.jp/" target="_blank">食肉通信社</a></li>
+                    <li><a href="https://www.jmga.or.jp/" target="_blank">食肉格付協會</a></li>
+                    <li><a href="https://www.id.nlbc.go.jp/" target="_blank">家畜改良中心</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>關於我們</h5>
+                <ul>
+                    <li><a href="#">平台介紹</a></li>
+                    <li><a href="#">使用說明</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                    <li><a href="#">隱私政策</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 肉品知識庫 Meat Knowledge Hub. All Rights Reserved.</p>
+            <p>資料僅供參考，正式規格請以官方網站為準</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                
+                // Open clicked if wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Region Tabs
+        document.querySelectorAll('.region-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.region-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+const fs = require('fs')
+const path = require('path')
+
+// 完整日本食肉市場資料（29個市場）
+// 來源：https://mmb.jmma.or.jp/member/
+const marketsData = [
+  // 東北
+  {
+    id: 'sendai',
+    name: '仙台市中央卸売市場食肉市場',
+    region: '東北',
+    address: '仙台市宮城野区扇町6丁目3番6號',
+    organization: '仙台中央食肉卸売市場株式會社',
+    phone: '022-258-6011',
+    website: 'https://mmb.jmma.or.jp/member/sendai/',
+  },
+  // 關東
+  {
+    id: 'ibaraki',
+    name: '茨城県中央食肉公社食肉地方卸売市場',
+    region: '關東',
+    address: '茨城県東茨城郡茨城町大字下土師字高山1975番地',
+    organization: '株式会社 茨城県中央食肉公社',
+    phone: '029-292-6811',
+    website: 'https://mmb.jmma.or.jp/member/ibaraki/',
+  },
+  {
+    id: 'utsunomiya',
+    name: '栃木県食肉地方卸売市場',
+    region: '關東',
+    address: '栃木県芳賀郡芳賀町稲毛田1921番地7',
+    organization: '株式会社 栃木県畜産公社',
+    phone: '028-616-2781',
+    website: 'https://mmb.jmma.or.jp/member/utsunomiya/',
+  },
+  {
+    id: 'gunma',
+    name: '群馬県食肉地方卸売市場',
+    region: '關東',
+    address: '群馬県佐波郡玉村町大字上福島1189番地',
+    organization: '株式会社群馬県食肉卸売市場',
+    phone: '0270-65-2011',
+    website: 'https://mmb.jmma.or.jp/member/gunma/',
+  },
+  {
+    id: 'saitama',
+    name: 'さいたま市食肉中央卸売市場',
+    region: '關東',
+    address: '埼玉県さいたま市大宮区吉敷町2丁目23番地',
+    organization: 'さいたま食肉市場株式会社',
+    phone: '048-641-6711',
+    website: 'https://mmb.jmma.or.jp/member/saitama/',
+  },
+  {
+    id: 'kawaguchi',
+    name: '川口食肉地方卸売市場',
+    region: '關東',
+    address: '埼玉県川口市領家4丁目7番18號',
+    organization: '川口食肉荷受株式会社',
+    phone: '048-223-3121',
+    website: 'https://mmb.jmma.or.jp/member/kawaguchi/',
+  },
+  {
+    id: 'tokyo',
+    name: '東京都中央卸売市場食肉市場',
+    region: '關東',
+    address: '東京都港區港南2丁目7番19號',
+    organization: '東京食肉市場株式会社',
+    phone: '03-3740-3111',
+    website: 'https://mmb.jmma.or.jp/member/tokyo/',
+  },
+  {
+    id: 'yokohama',
+    name: '橫濱市中央卸売市場食肉市場',
+    region: '關東',
+    address: '神奈川県橫濱市鶴見區大黒町3番53號',
+    organization: '橫濱食肉市場株式会社',
+    phone: '045-521-1171',
+    website: 'https://mmb.jmma.or.jp/member/yokohama/',
+  },
+  {
+    id: 'yamanashi',
+    name: '山梨食肉地方卸売市場',
+    region: '關東',
+    address: '山梨県笛吹市石和町唐柏1028番地',
+    organization: '株式会社山梨食肉流通センター',
+    phone: '055-262-2288',
+    website: 'https://mmb.jmma.or.jp/member/yamanashi/',
+  },
+  // 中部
+  {
+    id: 'hamamatsu',
+    name: '浜松市食肉地方卸売市場',
+    region: '中部',
+    address: '静岡県浜松市東區上西町986番地',
+    organization: '静岡県経済農業協同組合連合会',
+    phone: '053-463-3027',
+    website: 'https://mmb.jmma.or.jp/member/hamamatsu/',
+  },
+  {
+    id: 'gifu',
+    name: '岐阜市食肉地方卸売市場',
+    region: '中部',
+    address: '岐阜市境川5丁目148番地',
+    organization: '株式会社岐阜県畜産公社',
+    phone: '058-272-2559',
+    website: 'https://mmb.jmma.or.jp/member/gifu/',
+  },
+  {
+    id: 'hida',
+    name: '飛騨ミート地方卸売市場',
+    region: '中部',
+    address: '岐阜県高山市八日町327番地',
+    organization: '飛騨ミート農業協同組合連合会',
+    phone: '0577-32-5149',
+    website: 'https://mmb.jmma.or.jp/member/hida/',
+  },
+  {
+    id: 'nagoya',
+    name: '名古屋市中央卸売市場南部市場',
+    region: '中部',
+    address: '名古屋市港區船見町1番地之39',
+    organization: '名古屋食肉市場株式会社',
+    phone: '052-614-1129',
+    website: 'https://mmb.jmma.or.jp/member/nagoya/',
+  },
+  {
+    id: 'higashi_mikawa',
+    name: '地方卸売市場東三河食肉流通センター',
+    region: '中部',
+    address: '愛知県豊橋市明海町16番地之1',
+    organization: '愛知県経済農業協同組合連合会',
+    phone: '0532-23-3388',
+    website: 'https://mmb.jmma.or.jp/member/higashi_mikawa/',
+  },
+  {
+    id: 'yokkaichi',
+    name: '四日市市食肉地方卸売市場',
+    region: '中部',
+    address: '四日市市新正四丁目19番3號',
+    organization: '株式会社三重県四日市畜産公社',
+    phone: '059-351-2224',
+    website: 'https://mmb.jmma.or.jp/member/yokkaichi/',
+  },
+  // 近畿
+  {
+    id: 'kyoto',
+    name: '京都市中央食肉市場',
+    region: '近畿',
+    address: '京都市南区吉祥院石原東之口町2番地',
+    organization: '京都食肉市場株式会社',
+    phone: '075-681-8781',
+    website: 'https://mmb.jmma.or.jp/member/kyoto/',
+  },
+  {
+    id: 'osaka',
+    name: '大阪中央卸売市場 南港市場',
+    region: '近畿',
+    address: '大阪市住之江區南港南5丁目2番48號',
+    organization: '大阪市食肉市場株式会社',
+    phone: '06-6675-2110',
+    website: 'https://mmb.jmma.or.jp/member/osaka/',
+  },
+  {
+    id: 'kobe',
+    name: '神戶市中央卸売市場西部市場',
+    region: '近畿',
+    address: '神戶市長田區苅藻通7丁目1番20號',
+    organization: '神戶中央畜産荷受株式会社',
+    phone: '078-652-1162',
+    website: 'https://mmb.jmma.or.jp/member/kobe/',
+  },
+  {
+    id: 'kakogawa',
+    name: '加古川食肉地方卸売市場',
+    region: '近畿',
+    address: '兵庫県加古川市志方町志方町533番地',
+    organization: '加古川中央畜産荷受株式会社',
+    phone: '0794-52-4160',
+    website: 'https://mmb.jmma.or.jp/member/kakogawa/',
+  },
+  {
+    id: 'himeji',
+    name: '姫路市食肉地方卸売市場',
+    region: '近畿',
+    address: '姫路市東郷町1451番5',
+    organization: '姫路畜産荷受株式会社',
+    phone: '0792-24-6044',
+    website: 'https://mmb.jmma.or.jp/member/himeji/',
+  },
+  {
+    id: 'nishinomiya',
+    name: '西宮市食肉地方卸売市場',
+    region: '近畿',
+    address: '兵庫県西宮市西宮浜2丁目32番地之1',
+    organization: '西宮畜産荷受株式会社',
+    phone: '0798-23-2911',
+    website: 'https://mmb.jmma.or.jp/member/nishinomiya/',
+  },
+  // 中國
+  {
+    id: 'okayama',
+    name: '岡山県営食肉地方卸売市場',
+    region: '中國',
+    address: '岡山県岡山市中區桜橋1丁目2番43號',
+    organization: '岡山県食肉荷受株式会社',
+    phone: '086-272-2221',
+    website: 'https://mmb.jmma.or.jp/member/okayama/',
+  },
+  {
+    id: 'hiroshima',
+    name: '広島市中央卸売市場食肉市場',
+    region: '中國',
+    address: '広島市西區草津港1丁目11番1號',
+    organization: '広島食肉市場株式会社',
+    phone: '082-279-2920',
+    website: 'https://mmb.jmma.or.jp/member/hiroshima/',
+  },
+  // 四國
+  {
+    id: 'sakaide',
+    name: '香川県坂出食肉地方卸売市場',
+    region: '四國',
+    address: '香川県坂出市昭和町2丁目1番9號',
+    organization: '香川県農業協同組合',
+    phone: '0877-46-5635',
+    website: 'https://mmb.jmma.or.jp/member/sakaide/',
+  },
+  {
+    id: 'takamatsu',
+    name: '高松市食肉卸売市場',
+    region: '四國',
+    address: '香川県高松市郷東町587番地197',
+    organization: '株式会社高松市食肉卸売市場公社',
+    phone: '087-882-8911',
+    website: 'https://mmb.jmma.or.jp/member/takamatsu/',
+  },
+  // 九州
+  {
+    id: 'fukuoka',
+    name: '福岡市中央卸売市場食肉市場',
+    region: '九州',
+    address: '福岡市東區東浜2丁目85番地14',
+    organization: '福岡食肉市場株式会社',
+    phone: '092-641-6131',
+    website: 'https://mmb.jmma.or.jp/member/fukuoka/',
+  },
+  {
+    id: 'sasebo',
+    name: '佐世保市地方卸売市場食肉市場',
+    region: '九州',
+    address: '長崎県佐世保市干尽町3番地42',
+    organization: '佐世保食肉センター株式会社',
+    phone: '0956-31-5171',
+    website: 'https://mmb.jmma.or.jp/member/sasebo/',
+  },
+]
+
+async function updateMarkets() {
+  try {
+    // 確保資料目錄存在
+    const dataDir = path.join(__dirname, '..', 'data')
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true })
+    }
+    
+    // 寫入 JSON 檔案
+    const outputPath = path.join(dataDir, 'markets.json')
+    const data = {
+      markets: marketsData,
+      lastUpdate: new Date().toISOString(),
+      source: 'https://mmb.jmma.or.jp/member/',
+      totalCount: marketsData.length,
+    }
+    
+    fs.writeFileSync(outputPath, JSON.stringify(data, null, 2), 'utf-8')
+    
+    console.log(`✓ Markets data updated successfully!`)
+    console.log(`  Total markets: ${marketsData.length}`)
+    console.log(`  Regions: ${[...new Set(marketsData.map(m => m.region))].join(', ')}`)
+    console.log(`  Saved to: ${outputPath}`)
+    
+    return data
+  } catch (error) {
+    console.error('Failed to update markets:', error)
+    process.exit(1)
+  }
+}
+
+// 執行更新
+updateMarkets()

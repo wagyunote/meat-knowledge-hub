@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #8B2635;
+  --primary-dark: #6B1D29;
+  --secondary: #D4A574;
+  --accent: #2C5F2D;
+  --cream: #FDF8F3;
+  --warm-white: #FFFCF9;
+  --charcoal: #2D2D2D;
+  --warm-gray: #6B6B6B;
+  --light-gray: #E8E4E0;
+}
+
+@layer base {
+  body {
+    @apply bg-[#FDF8F3] text-[#2D2D2D] antialiased;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-meat {
+    background: linear-gradient(135deg, #8B2635 0%, #A63848 50%, #8B2635 100%);
+  }
+  
+  .gradient-gold {
+    background: linear-gradient(135deg, #D4A574 0%, #E8C99B 50%, #D4A574 100%);
+  }
+  
+  .grade-a { @apply bg-[#8B2635] text-white; }
+  .grade-b { @apply bg-[#C44B5C] text-white; }
+  .grade-c { @apply bg-[#E8A5AD] text-[#2D2D2D]; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Animations */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s infinite;
+}
+
+/* Typography */
+.font-serif-tc {
+  font-family: 'Noto Serif TC', serif;
+}
