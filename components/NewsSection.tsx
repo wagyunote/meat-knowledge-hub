@@ -1,13 +1,15 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-import { ArrowRight, Newspaper } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ArrowRight, Newspaper, Search, X, TrendingUp, Calendar } from 'lucide-react'
 import type { NewsItem } from '@/types'
 
 export default function NewsSection() {
   const [news, setNews] = useState<NewsItem[]>([])
   const [loading, setLoading] = useState(true)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [activeCategory, setActiveCategory] = useState('全部')
 
   useEffect(() => {
     fetch(`${process.env.NODE_ENV === 'production' ? '/meat-knowledge-hub' : ''}/data/news.json`)
@@ -38,75 +40,176 @@ export default function NewsSection() {
     return map[category] || '📰'
   }
 
+  const categories = ['全部', '品牌競賽', '展會活動', '生產資訊', '市場行情', '產業動態']
+
+  const filteredNews = news.filter(item => {
+    const matchesSearch = !searchQuery || 
+      item.title.toLowerCase().includes(searchQuery.toLowerCase())
+    const category = getCategory(item.title)
+    const matchesCategory = activeCategory === '全部' || category === activeCategory
+    return matchesSearch && matchesCategory
+  })
+
+  const formatDate = (dateStr: string) => {
+    try {
+      const d = new Date(dateStr)
+      return d.toLocaleDateString('zh-TW', { month: 'short', day: 'numeric' })
+    } catch {
+      return ''
+    }
+  }
+
   return (
     <section id="news" className="mb-16 sm:mb-20">
-      <div className="flex justify-between items-end mb-6 sm:mb-10">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-6 sm:mb-10">
         <h2 className="font-serif-tc text-2xl sm:text-3xl text-charcoal relative pb-3 sm:pb-4">
           最新產業動態
           <span className="absolute bottom-0 left-0 w-14 sm:w-16 h-1 gradient-meat rounded-full"></span>
         </h2>
-        <a href="#" className="text-primary text-sm font-medium flex items-center gap-1 hover:gap-2 transition-all">
-          查看全部 <ArrowRight size={16} />
-        </a>
+        <div className="flex items-center gap-2">
+          <span className="text-warm-gray text-sm">
+            {news.length} 則新聞
+          </span>
+          <TrendingUp className="w-4 h-4 text-primary" />
+        </div>
       </div>
 
+      {/* Search & Filter */}
+      <div className="mb-6 sm:mb-8 space-y-4">
+        {/* Search Bar */}
+        <div className="relative">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-warm-gray" />
+          <input
+            type="text"
+            placeholder="搜尋新聞..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-12 pr-10 py-3 sm:py-4 bg-white rounded-xl sm:rounded-2xl border border-light-gray focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-warm-gray hover:text-charcoal"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          )}
+        </div>
+
+        {/* Category Pills */}
+        <div className="flex flex-wrap gap-2">
+          {categories.map(cat => {
+            const count = cat === '全部' 
+              ? news.length 
+              : news.filter(n => getCategory(n.title) === cat).length
+            return (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1 ${
+                  activeCategory === cat
+                    ? 'gradient-meat text-white shadow-md'
+                    : 'bg-white text-warm-gray hover:bg-cream hover:text-primary border border-light-gray'
+                }`}
+              >
+                <span>{getEmoji(cat)}</span>
+                {cat}
+                <span className="text-xs opacity-70">({count})</span>
+              </button>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* News Grid */}
       {loading ? (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-card animate-pulse">
-              <div className="h-40 sm:h-44 bg-light-gray"></div>
-              <div className="p-5 sm:p-6 space-y-3">
-                <div className="h-5 w-20 bg-light-gray rounded"></div>
-                <div className="h-6 bg-light-gray rounded"></div>
-                <div className="h-4 w-3/4 bg-light-gray rounded"></div>
-              </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {[1, 2, 3].map(i => (
+            <div key={i} className="bg-white rounded-xl sm:rounded-2xl p-5 animate-pulse">
+              <div className="h-4 bg-light-gray rounded w-1/4 mb-3"></div>
+              <div className="h-6 bg-light-gray rounded w-3/4 mb-2"></div>
+              <div className="h-4 bg-light-gray rounded w-1/2"></div>
             </div>
           ))}
         </div>
       ) : (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {news.slice(0, 6).map((item, index) => {
-            const category = getCategory(item.title)
-            const emoji = getEmoji(category)
-            
-            return (
-              <motion.article
-                key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
-                className="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all cursor-pointer group"
-              >
-                <a href={item.link} target="_blank" rel="noopener noreferrer">
-                  <div className="h-40 sm:h-44 gradient-meat flex items-center justify-center text-4xl sm:text-5xl group-hover:scale-105 transition-transform">
-                    {emoji}
-                  </div>
-                  <div className="p-5 sm:p-6">
-                    <span className="inline-block px-3 py-1 bg-cream text-primary text-xs font-medium rounded-full mb-3">
-                      {category}
-                    </span>
-                    <h3 className="font-serif-tc text-base sm:text-lg font-semibold text-charcoal leading-relaxed line-clamp-2 mb-3 group-hover:text-primary transition-colors">
-                      {item.title}
-                    </h3>
-                    <div className="flex justify-between items-center text-xs text-warm-gray">
-                      <span className="flex items-center gap-1.5">
-                        <Newspaper size={12} />
-                        食肉通信社
+        <>
+          <AnimatePresence mode="wait">
+            <motion.div 
+              key={activeCategory + searchQuery}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+            >
+              {filteredNews.slice(0, 6).map((item, index) => {
+                const category = getCategory(item.title)
+                const emoji = getEmoji(category)
+                
+                return (
+                  <motion.a
+                    key={item.link}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    whileHover={{ y: -4, boxShadow: '0 12px 24px rgba(0,0,0,0.1)' }}
+                    className="block bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-card hover:shadow-card-hover transition-all group cursor-pointer"
+                  >
+                    {/* Category Tag */}
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-cream text-primary font-medium">
+                        {emoji} {category}
                       </span>
-                      <span className="flex items-center gap-1 px-2 py-1 bg-green-50 text-green-600 rounded-full">
-                        <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-                        即時同步
+                      <span className="text-xs text-warm-gray flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        {formatDate(item.pubDate)}
                       </span>
                     </div>
-                  </div>
-                </a>
-              </motion.article>
-            )
-          })}
-        </div>
+
+                    {/* Title */}
+                    <h3 className="font-medium text-charcoal text-sm sm:text-base line-clamp-2 group-hover:text-primary transition-colors mb-2">
+                      {item.title}
+                    </h3>
+
+                    {/* Source */}
+                    <div className="text-xs text-warm-gray flex items-center justify-between">
+                      <span className="flex items-center gap-1">
+                        <Newspaper className="w-3 h-3" />
+                        食肉通信社
+                      </span>
+                      <ArrowRight className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </motion.a>
+                )
+              })}
+            </motion.div>
+          </AnimatePresence>
+
+          {filteredNews.length === 0 && (
+            <div className="text-center py-12 text-warm-gray">
+              <Newspaper className="w-12 h-12 mx-auto mb-4 opacity-30" />
+              <p>沒有找到相關新聞</p>
+            </div>
+          )}
+
+          {filteredNews.length > 6 && (
+            <div className="text-center mt-8">
+              <button className="px-6 py-3 rounded-full bg-white text-primary border border-primary hover:bg-primary hover:text-white transition-all font-medium text-sm">
+                查看更多新聞 ({filteredNews.length - 6} 則)
+              </button>
+            </div>
+          )}
+        </>
       )}
+
+      {/* Real-time Badge */}
+      <div className="mt-6 flex items-center justify-center gap-2 text-xs text-warm-gray">
+        <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+        即時更新 · 來自食肉通信社 RSS
+      </div>
     </section>
   )
 }
