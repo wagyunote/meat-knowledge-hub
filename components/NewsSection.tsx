@@ -10,7 +10,7 @@ export default function NewsSection() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/data/news.json')
+    fetch(`${process.env.NODE_ENV === 'production' ? '/meat-knowledge-hub' : ''}/data/news.json`)
       .then(res => res.json())
       .then(data => {
         setNews(data.news || [])

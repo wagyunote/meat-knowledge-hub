@@ -22,7 +22,7 @@ export default function MarketsSection() {
   const itemsPerPage = 10
 
   useEffect(() => {
-    fetch('/data/jp-beef-facilities.json')
+    fetch(`${process.env.NODE_ENV === 'production' ? '/meat-knowledge-hub' : ''}/data/jp-beef-facilities.json`)
       .then(res => res.json())
       .then(data => {
         setFacilities(data.facilities || [])

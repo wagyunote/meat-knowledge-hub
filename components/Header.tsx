@@ -16,7 +16,7 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll)
     
     // 載入最後更新時間
-    fetch('/data/news.json')
+    fetch(`${process.env.NODE_ENV === 'production' ? '/meat-knowledge-hub' : ''}/data/news.json`)
       .then(res => res.json())
       .then(data => {
         const ts = data.lastUpdate || data.updatedAt
@@ -25,7 +25,7 @@ export default function Header() {
           setLastUpdate(`${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`)
         }
       })
-      .catch(() => setLastUpdate('2026/04/14 22:00'))
+      .catch(() => setLastUpdate('2026/04/14 23:00'))
     
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
