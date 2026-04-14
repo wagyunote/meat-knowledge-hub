@@ -1,0 +1,96 @@
+{
+  "date": "2026/04/14",
+  "data": {
+    "1802": {
+      "name": "台玻",
+      "foreign_buy": 58273782,
+      "foreign_hold": 109799910,
+      "invest_buy": 0,
+      "dealer_buy": 1767626
+    },
+    "2344": {
+      "name": "華邦電",
+      "foreign_buy": -4310560,
+      "foreign_hold": 51147086,
+      "invest_buy": 2662995,
+      "dealer_buy": 355998
+    },
+    "6770": {
+      "name": "力積電",
+      "foreign_buy": 707298,
+      "foreign_hold": 36571036,
+      "invest_buy": 9000,
+      "dealer_buy": 782000
+    },
+    "2409": {
+      "name": "友達",
+      "foreign_buy": 111487654,
+      "foreign_hold": 211876810,
+      "invest_buy": 17000,
+      "dealer_buy": 2658000
+    },
+    "3481": {
+      "name": "群創",
+      "foreign_buy": 79239813,
+      "foreign_hold": 167778312,
+      "invest_buy": 55000,
+      "dealer_buy": 2551000
+    },
+    "2426": {
+      "name": "鼎元",
+      "foreign_buy": -3043990,
+      "foreign_hold": 17009010,
+      "invest_buy": 0,
+      "dealer_buy": 891361
+    },
+    "2485": {
+      "name": "兆赫",
+      "foreign_buy": -5447101,
+      "foreign_hold": 20579229,
+      "invest_buy": 0,
+      "dealer_buy": 58000
+    },
+    "2317": {
+      "name": "鴻海",
+      "foreign_buy": 17772411,
+      "foreign_hold": 38267295,
+      "invest_buy": 104987,
+      "dealer_buy": 872000
+    },
+    "2382": {
+      "name": "廣達",
+      "foreign_buy": 2849283,
+      "foreign_hold": 11101001,
+      "invest_buy": 748260,
+      "dealer_buy": 380648
+    },
+    "3231": {
+      "name": "緯創",
+      "foreign_buy": 11633002,
+      "foreign_hold": 21921027,
+      "invest_buy": 831975,
+      "dealer_buy": 377363
+    },
+    "3661": {
+      "name": "世芯-KY",
+      "foreign_buy": 395774,
+      "foreign_hold": 952790,
+      "invest_buy": 16515,
+      "dealer_buy": 1000
+    },
+    "7769": {
+      "name": "鴻勁",
+      "foreign_buy": 426551,
+      "foreign_hold": 901862,
+      "invest_buy": 361507,
+      "dealer_buy": 13017
+    },
+    "2489": {
+      "name": "瑞軒科技",
+      "foreign_buy": -8838875,
+      "foreign_hold": 20143925,
+      "invest_buy": 0,
+      "dealer_buy": 327000
+    }
+  }
+}
