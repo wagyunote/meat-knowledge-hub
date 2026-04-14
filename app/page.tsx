@@ -4,6 +4,7 @@ import NewsSection from '@/components/NewsSection'
 import KnowledgeSection from '@/components/KnowledgeSection'
 import MarketsSection from '@/components/MarketsSection'
 import StandardsSection from '@/components/StandardsSection'
+import USFacilitiesSection from '@/components/USFacilitiesSection'
 import FAQSection from '@/components/FAQSection'
 import AUFactorySection from '@/components/AUFactorySection'
 import DataSourcesSection from '@/components/DataSourcesSection'
@@ -19,6 +20,7 @@ export default function Home() {
         <KnowledgeSection />
         <MarketsSection />
         <StandardsSection />
+        <USFacilitiesSection />
         <FAQSection />
         <AUFactorySection />
         <DataSourcesSection />

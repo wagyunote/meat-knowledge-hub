@@ -35,6 +35,7 @@ export default function Header() {
     { label: '知識百科', href: '#knowledge' },
     { label: '日本牛肉設施', href: '#markets' },
     { label: '分級標準', href: '#standards' },
+    { label: '美國牛肉設施', href: '#us-facilities' },
     { label: '常見問題', href: '#faq' },
     { label: '澳洲工廠', href: '#au-factories' },
   ]

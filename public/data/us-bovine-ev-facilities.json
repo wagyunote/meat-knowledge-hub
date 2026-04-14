@@ -1,0 +1,691 @@
+{
+  "facilities": [
+    {
+      "id": "US-EV-1",
+      "company": "10,000 Lakes Beef, Inc. dba US 212 Beef 53050 US Hwy 212 Buffalo Lake, MN 55314 Contact: Travis Camp",
+      "est_no": "47368",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-2",
+      "company": "A&S Produce Inc., dba Greenland Foods Company 2939 S. Sunol Drive Vernon, CA 90058 Contact: Brian Ju",
+      "est_no": "5889",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-3",
+      "company": "AdvancePierre Foods, Inc. 9990 Princeton Glendale Road Cincinnati, OH 45246 Contact: Connie Carl Pho",
+      "est_no": "2132",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-4",
+      "company": "AdvancePierre Foods, Inc. 201 South Raleigh Road Enid, OK 73701 Contact: Melissa Griffin Phone: (580",
+      "est_no": "2260Y,\n2260E,\n19692",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-5",
+      "company": "Agri Star Meat and Poultry, LLC 220 West Street Postville, IA 52162 Contact: Cristian Fajardo Phone:",
+      "est_no": "4653A/\nP4653A",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-6",
+      "company": "American Foods Group, LLC 544 Acme Street P.O. Box 8547 (Zip 54308) Green Bay, WI 54302 Contact: Amb",
+      "est_no": "410",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-7",
+      "company": "American Foods Group, East River Facility 800 University Avenue P.O. Box 8547 Green Bay, WI 54308 Co",
+      "est_no": "18076",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-8",
+      "company": "Aurora Packing Company 125 South Grant Street North Aurora, IL 60542 Contact: Francisco Raspaldo Pho",
+      "est_no": "788",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-9",
+      "company": "Ben’s Best Charcuterie 22506 64th Avenue E Bradenton, FL 34211 Contact: Ben Lapin; Douglas Lapin Pho",
+      "est_no": "46146",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-10",
+      "company": "BKBG Enterprises dba Devanco Foods 440 Mission Street Carol Stream, IL 60188 Contact: Belen Leyva Ph",
+      "est_no": "17064",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-11",
+      "company": "Brush Meat Processors, LLC 1300 S. Railway Brush, CO 80723 Contact: Olga Cerda Phone: (970) 842-9749",
+      "est_no": "44999",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-12",
+      "company": "Buckhead Meat and Seafood of Central Florida 355 Progress Road Auburndale, FL 33823 Contact: Jorge F",
+      "est_no": "27468",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-13",
+      "company": "Cargill Meat Solutions Corporation 3201 East Trail Street Dodge City, KS 67801 Contact: Michelle Iba",
+      "est_no": "86K",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-14",
+      "company": "Cargill Meat Solutions Corp. 1505 E. Burlington Ave. Fort Morgan, CO 80701 Contact: Kaitlyn Gill Pho",
+      "est_no": "86R",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-15",
+      "company": "Cargill Meat Solutions Corp 1530 US Highway 60 Friona, TX 79035 Contact: Lyndsey Vallejos Phone: (80",
+      "est_no": "86E",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-16",
+      "company": "Cargill Meat Solutions Corp. 2601 Industrial Rd. Nebraska City, NE 68410 Contact: Ana Campise; Ashle",
+      "est_no": "86J",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-17",
+      "company": "Cargill Meat Solutions Corporation 490 Road 9 Schuyler, NE 68661 Contact: Anna Kukowski; Ed Korth Ph",
+      "est_no": "86M",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-18",
+      "company": "Caviness Beef Packers, LTD 3255 West Hwy 60 Hereford, TX 79045 Contact: Jorge Aleman Phone: (806) 35",
+      "est_no": "675",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-19",
+      "company": "Central Valley Meat Company, Inc. 10431 8 ¾ Avenue Hanford, CA 93230 Contact: Terri Hall Phone: (559",
+      "est_no": "6063A",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-20",
+      "company": "Chef’s Fresh Foods 181 Naples Street Mendota, CA 93640 Contact: Troy Becker, Alfred Rangel Phone: (5",
+      "est_no": "1319",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-21",
+      "company": "Cheney OFS, Inc. Grand Western Orlando 3875 Bengert Street Orlando, FL 32808 Contact: Joe Emmer; Col",
+      "est_no": "17521",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-22",
+      "company": "Chicago Meat Authority, Inc. 1120 West 47th Place Chicago, IL 60609 Contact: Gustavo Garcia Phone: (",
+      "est_no": "1957",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-23",
+      "company": "Chicago Meat Authority, Inc. 1100 W. 48th Street Chicago, IL 60609 Contact: Gustavo Garcia Phone: (7",
+      "est_no": "1957A",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-24",
+      "company": "City Foods, Inc. dba Bea’s Best 4230 South Racine Avenue Chicago, IL 60609 Contact: Brian Sanchez Ph",
+      "est_no": "1896",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-25",
+      "company": "Colorado Premium Foods 5140 Race Court Denver, CO 80216 Contact: Dr. John Ruby Phone: (970) 313-4400",
+      "est_no": "38468",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-26",
+      "company": "Colorado Premium Foods 2035 2nd Ave. Greeley, CO 80631 Contact: Dr. John Ruby Phone: (970) 313-4400 ",
+      "est_no": "4891",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-27",
+      "company": "Creekstone Farms Premium Beef, LLC 604 Goff Industrial Park Road Arkansas City, KS 67005 Contact: Mi",
+      "est_no": "27",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-28",
+      "company": "Crossing Storage Services, Inc. 3305 E. Vernon Avenue Vernon, CA 90058 Contact: Sean Min; Lleraidi P",
+      "est_no": "51212",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-29",
+      "company": "Cuisine Solutions, Inc. 4106 Wheeler Avenue Alexandria, VA 22304 Contact: Edel Fenelon Phone: (703) ",
+      "est_no": "17643",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-30",
+      "company": "Cuisine Solutions, Inc. 22445 Sous Vide Lane, Suite 100 Sterling, VA 20166 Contact: Ali Hakimi Phone",
+      "est_no": "44919",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-31",
+      "company": "Crystal Lake Foods, LLC 320 Commerce Street York, NE 68467 Contact: Chris Broughton Phone: (402) 362",
+      "est_no": "20845",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-32",
+      "company": "CS Beef Packers, LLC 17365 South Cole Road Kuna, ID 83634 Contact: Roger Cooper Phone: (208) 810-750",
+      "est_no": "630",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-33",
+      "company": "Double J Meat Packing, Inc. 726 West Main Street Pierce, CO 80650 Contact: Suzanne Morrow Phone: (97",
+      "est_no": "322",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-34",
+      "company": "Eastern Montana Meats 12314 County Road 351 Sidney, MT 59270 Contact: Shanna Lunderby Phone: (406) 4",
+      "est_no": "47277",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-35",
+      "company": "Elkhorn Valley Packing Company 101 N. Central Harper, KS 67058 Contact: Dallas Kenney Phone (620) 89",
+      "est_no": "19549",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-36",
+      "company": "Elkhorn Valley Packing Company 1509 E 16th Street Wellington, KS 67152 Contact: Dallas Kenney Phone ",
+      "est_no": "19549A",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-37",
+      "company": "empirical foods, inc. 360 164th Street South Sioux City, NE 68776 Contact: Kyle Donnelly; Nick Vaul ",
+      "est_no": "19872",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-38",
+      "company": "Esro Food Group, LLC DBA Fayman & Sorbello Food Group, LLC 600 Industrial Road Madill, OK 73446 Cont",
+      "est_no": "47667",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-39",
+      "company": "Fayman Food Group, LLC DBA Fayman & Sorbello Food Group, LLC 600 Industrial Road Madill, OK 73446 Co",
+      "est_no": "47762",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-40",
+      "company": "Flannery Beef LLC 139 Carlos Drive, Unit C San Rafael, CA 94903 Contact: Katie Flannery Phone: (415)",
+      "est_no": "40219",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-41",
+      "company": "Fontanini Foods, LLC 8751 West 50th Street McCook, IL 60525 Contact: Maria Crawford; Areliema Castan",
+      "est_no": "6944",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-42",
+      "company": "Fort Worth Meat Packers, LLC 3801 North Grove Street Fort Worth, TX 76106 Contact: Kate Miller; Lisa",
+      "est_no": "47104",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-43",
+      "company": "FPL Food, LLC 1301 New Savannah Road Augusta, GA 30901 Contact: Chevise Thomas Phone: (706) 922-8198",
+      "est_no": "332",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-44",
+      "company": "Fremont Beef Company 960 South Schneider Street Fremont, NE 68025 Contact: Matt Taylor; Paul Nielsen",
+      "est_no": "13415",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-45",
+      "company": "Frontiere Natural Meats, LLC dba Platte Valley Food Group LLC 810 E. 50th Avenue Denver, CO 80216 Co",
+      "est_no": "17086",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-46",
+      "company": "Fusion Ranch, Inc. 250521 Skyport Drive Scottsbluff, NE 69361 Contact: Connie Pennock Phone: (308) 6",
+      "est_no": "44883",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-47",
+      "company": "Gibbon Packing, LLC dba American Foods Group, LLC 218 East Hwy 30 Gibbon, NE 68840 Contact: Jackie K",
+      "est_no": "5511",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-48",
+      "company": "Greater Omaha Packing Co., Inc. 3001 L Street P.O. Box 7566 Omaha, NE 68107 Contact: Angel Besta; Sa",
+      "est_no": "960",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-49",
+      "company": "Harris Ranch Beef Company 16277 South McCall Avenue Selma, CA 93662 Contact: Julie Wilkinson; Emily ",
+      "est_no": "783",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-50",
+      "company": "Intermountain Packing, LLC 1096 East Iona Road Idaho Falls, ID 83401 Contact: Selia Perez Phone: (62",
+      "est_no": "47547",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-51",
+      "company": "Iowa Pacific Processors 2606 Sunset Road Des Moines, IA 50321 Contact: Keshav Kalia; Josh Hale Phone",
+      "est_no": "2327",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-52",
+      "company": "Iowa Premium, LLC 3337 L Avenue Tama, IA 52339 Contact: Michael Spurgin Phone: (816) 713-8818 Email:",
+      "est_no": "8",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-53",
+      "company": "J.F. O'Neill Packing Company P.O. Box 7194 3120 G Street Omaha, NE 68107 Contact: Patrick O’Neill; D",
+      "est_no": "889A",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-54",
+      "company": "JBS Green Bay, Inc. 1330 Lime Kiln Road Green Bay, WI 54311 Contact: Kaitlyn Szeles; Sherri Williams",
+      "est_no": "562",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-55",
+      "company": "JBS Plainwell, Inc. 11 11th Street Plainwell, MI 49080 Contact: Krysten Johnson; Kaitlyn Story Phone",
+      "est_no": "562M",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-56",
+      "company": "JBS Souderton, Inc. 249 Allentown Road Souderton, PA 18964 Contact: Sherri Jenkins; Oumou Thiam Phon",
+      "est_no": "1311",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-57",
+      "company": "JBS Tolleson, Inc. 651 South 91st Avenue Tolleson, AZ 85353 Contact: Kevin Whitehurst Phone: (623) 4",
+      "est_no": "267",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-58",
+      "company": "Lincoln Provision, Inc. 824 W. 38th Place Chicago, IL 60609 Contact: Sara Sanchez Phone: (773) 254-2",
+      "est_no": "1077",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-59",
+      "company": "Long Prairie Packing Company, LLC 10 Riverside Drive Long Prairie, MN 56347 Contact: Cherie Bukurrou",
+      "est_no": "253",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-60",
+      "company": "Lorentz Meats 705 Cannon Industrial Blvd. Cannon Falls, MN 55009 Contact: David Wilson Phone: (507) ",
+      "est_no": "21207",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-61",
+      "company": "MacDonald Meat Company, Inc. 2709 Airport Way South Seattle, WA 98134 Contact: Melanie Fuller Phone:",
+      "est_no": "1557",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-62",
+      "company": "Marcho Farms Premium Veal 519 Allentown Rd. Souderton, PA 18964 Contact: Herb Nicolo Phone: (215) 72",
+      "est_no": "7857",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-63",
+      "company": "Mary Ann’s Specialty Foods, Inc. 1511 East Second Street Webster City, IA 50595 Contact: Joel Weidne",
+      "est_no": "1221W",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-64",
+      "company": "Masami Foods, Inc. 5222 Tingley Lane Klamath Falls, OR 97603 Contact: Jon Beedy Phone: (541) 884-173",
+      "est_no": "6173",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-65",
+      "company": "Master Purveyors, Inc. 355 Food Center Drive, Unit B-14 Bronx, NY 10474 Contact: Mark Solasz Phone: ",
+      "est_no": "5101",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-66",
+      "company": "Meats by Linz 628 Hoffman Street Hammond, IN 46327 Contact: Herb Eisensee Phone: (708) 862-0830 Emai",
+      "est_no": "6810",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-67",
+      "company": "National Beef Packing Co., L.L.C. 2000 East Trail Street Dodge City, KS 67801 Contact: Michael Spurg",
+      "est_no": "262",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-68",
+      "company": "National Beef Packing Co., L.L.C. 1501 East 8th Street Liberal, KS 67905 Contact: Michael Spurgin Ph",
+      "est_no": "208A",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-69",
+      "company": "Nebraska Beef, LTD. 4501 South 36th Street Omaha, NE 68107 Contact: Yas Yokozeki Phone: (402) 733-90",
+      "est_no": "19336",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-70",
+      "company": "New Angus, LLC dba DemKota Ranch Beef 13 135th Street SW Aberdeen, SD 57401 Contact: Rachel Line Pho",
+      "est_no": "45471",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-71",
+      "company": "New England Meat Packing, LLC 30 Furnace Hollow Road Stafford Springs, CT 06076 Contact: Matt Beqiri",
+      "est_no": "21183",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-72",
+      "company": "Newport Meat Southern California, Inc. 16691 Hale Avenue Irvine, CA 92606 Contact: Pollyann Thomas P",
+      "est_no": "4195",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-73",
+      "company": "Noah’s Ark Processors dba WR Reserve 1009 West M Street Hastings, NE 68901 Contact: Jennifer Herman;",
+      "est_no": "27472",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-74",
+      "company": "North American Bison LLC 1658 Highway 281 New Rockford, ND 58356 Contact: Karla Jacobson; DariAnn Da",
+      "est_no": "18859",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-75",
+      "company": "ORB CCM Holding, LLC 120 West Highway 20 Gordon NE 69343 Contact: Wyatt Mills Phone: (308) 282-1125 ",
+      "est_no": "46407",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-76",
+      "company": "OWB Packers, LLC 57 E. Shank Road Brawley, CA 92227 Contact: Abdalla Amin; Marisa Craig- Allen Phone",
+      "est_no": "21488",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-77",
+      "company": "Prime Food Distributor, Inc. 80 Seaview Blvd. Port Washington, NY 11050 Contact: Daniel Fazio Phone:",
+      "est_no": "5200",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-78",
+      "company": "Quality Refrigerated Services 3301 G Street Omaha, NE 68107 Contact: Johana Sanchez; Amy English Pho",
+      "est_no": "20374",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-79",
+      "company": "Rancher’s US OP, LLC dba Rancher’s Legacy 4301 White Bear Parkway Vadnais Heights, MN 55110 Contact:",
+      "est_no": "40264",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-80",
+      "company": "Rastelli Foods Group 300 Heron Drive Logan Township, NJ 08085 Contact: Carl Zerr III Phone: (856) 80",
+      "est_no": "7877A",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-81",
+      "company": "Rocky Mountain Natural Meats 9757 Alton Way Henderson, CO 80640 Contact: Sidney Tay-Tse Phone: (303)",
+      "est_no": "20247",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-82",
+      "company": "Royal Pack LLC 21981 N. Glade Road Basin City, WA 99343 Contact: Jason Helaas Phone: (509) 234-0531 ",
+      "est_no": "6270",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-83",
+      "company": "Schreiber Processing Corporation 56-20 59th Street Maspeth, NY 11378 Contact: Mordechai Milworn; Dr.",
+      "est_no": "1698",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-84",
+      "company": "Sierra Meat & Seafood Company 1330 Capital Boulevard Reno, NV 89502 Contact: Hollie Glisson Phone: (",
+      "est_no": "1438",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-85",
+      "company": "Skylark Meats, LLC 4430 South 110th Street Omaha, NE 68137 Contact: Jennifer Donohue Phone: (402) 93",
+      "est_no": "4215",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-86",
+      "company": "Stampede Culinary Partners, Inc. 7351 S. 78th Avenue Bridgeview, IL 60455 Contact: Ann Clarton; Adam",
+      "est_no": "19113",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-87",
+      "company": "Standard Meat Company 5105 Investment Drive Dallas, TX 75236 Contact: Jonathan Savell Phone: (214) 5",
+      "est_no": "27221",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-88",
+      "company": "Standard Meat Company 455 Sansom Blvd. Saginaw, TX 76179 Contact: Kay Ketteler Phone: (214) 561-0360",
+      "est_no": "33861",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-89",
+      "company": "Sterling Pacific Meat Company 6114 Scott Way Commerce, CA 90040 Contact: Tony Cuevas Phone: (323) 83",
+      "est_no": "550",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-90",
+      "company": "STX Beef Company, LLC 9001 Leopard Street Corpus Christi, TX 78409 Contact: David Jacobs Phone: (361",
+      "est_no": "337",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-91",
+      "company": "Swift Beef Company 5950 Trails End Road Cactus, TX 79013 Contact: Chris Romero Phone: (806) 966-9200",
+      "est_no": "3D",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-92",
+      "company": "Swift Beef Company P.O. Box 2137 555 South Stuhr Road Grand Island, NE 68801 Contact: Elizabeth Rasm",
+      "est_no": "969G",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-93",
+      "company": "Swift Beef Company 800 North 8th Avenue Greeley, CO 80631 Contact: Danielle Freels Phone: (970) 304-",
+      "est_no": "969",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-94",
+      "company": "Swift Beef Company 920 North 7th Avenue Greeley, CO 80631 Contact: Hannah Romero Phone: (970) 576-62",
+      "est_no": "19652",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-95",
+      "company": "Swift Beef Company 410 North, 200 West Hyrum, UT 84319 Contact: Cesar Clavel Phone: (435) 245-2294 E",
+      "est_no": "628",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-96",
+      "company": "Swift Beef Company 3435 Edward Babe Gomez Avenue Omaha, NE 68107 Contact: Valentin Figueroa; Haley D",
+      "est_no": "532",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-97",
+      "company": "Tejas Premium Meats, LLC 3555 FM 67 Itasca, TX 76055 Contact: Jasmine Corral-Macias Phone: (254) 687",
+      "est_no": "46339",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-98",
+      "company": "Thunder Ridge Beef Company 22034 200th Street Sigourney, IA 52591 Contact: Keaton Walker Phone: (641",
+      "est_no": "45099",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-99",
+      "company": "True West Beef, LLC 6026 US Hwy 93 Jerome, ID 83338 Contact: Teaony McCann Phone: (208) 933-9017 Ema",
+      "est_no": "268",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-100",
+      "company": "Tyson Fresh Meats 5000 N. Fm 1912 Amarillo, TX 79108 Contact: Andy Bui Phone: (806) 335-7324 Email: ",
+      "est_no": "245E",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-101",
+      "company": "Tyson Fresh Meats 1131 Dakota Avenue Dakota City, NE 68731 Contact: Angela Nash; Ashley Graves Phone",
+      "est_no": "245C",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-102",
+      "company": "Tyson Fresh Meats 3105 North IBP Road Holcomb, KS 67851 Contact: Jose Flores Jr.; Adrian Villegas Ph",
+      "est_no": "278",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-103",
+      "company": "Tyson Fresh Meats 28424 38th Ave N. Hillsdale, IL 61257 Contact: Kyrie Baumgartner Phone: (309) 658-",
+      "est_no": "245J",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-104",
+      "company": "Tyson Fresh Meats 1500 Plum Creek Parkway Lexington, NE 68850 Contact: Susan Rasmussen; Orlando Alar",
+      "est_no": "245L",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-105",
+      "company": "Tyson Fresh Meats 13983 Dodd Road Pasco (Wallula), WA 99363 Contact: Christine Feyder Phone: (509) 5",
+      "est_no": "9268",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-106",
+      "company": "Upper Iowa Beef, LLC 4614 US Highway 63 Lime Springs, IA 52155 Contact: Annette Kime Phone: (563) 56",
+      "est_no": "45321",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-107",
+      "company": "Universal Pure, LLC 1601 Pioneers Blvd. Lincoln, NE 68502 Contact: Ashley Nicholson; Peter Comstock ",
+      "est_no": "31896",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-108",
+      "company": "Washington Beef, LLC. /also dba/ AB Foods, LLC. 201 Elmwood Road Toppenish, WA 98948 Contact: Astric",
+      "est_no": "235",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-109",
+      "company": "West Coast Prime Meats LLC 344 Cliffwood Park St. Brea, CA 92821 Contact: Lluvia Serrano Phone: (714",
+      "est_no": "6028A",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-110",
+      "company": "Western Meat Processing, Inc. 725 Zeff Road Modesto, CA 95351 Contact: Jackie Vance Phone: (209) 521",
+      "est_no": "44824",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-111",
+      "company": "Wolverine Packing Company 2820 Rivard Street Detroit, MI 48207 Contact: Melanie Hayes; Cara Kennedy;",
+      "est_no": "2574C",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-112",
+      "company": "Wolverine Packing Company 4225 Dequindre Street Detroit, MI 48207 Contact: Melanie Hayes; Cara Kenne",
+      "est_no": "2574D",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-113",
+      "company": "Yosemite Valley Beef Distributors, LLC 3040 E. Washington Blvd. Los Angeles, CA 90023 Contact: John ",
+      "est_no": "48097",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    },
+    {
+      "id": "US-EV-114",
+      "company": "Yosemite Valley Beef Packing Company, Inc. 970 E. Sandy Mush Road Merced, CA 95341 Contact: Wesley J",
+      "est_no": "301",
+      "source": "USDA Bovine EV Program (2026.4.13)"
+    }
+  ],
+  "lastUpdate": "2026-04-13",
+  "source": "USDA Official Listing of Eligible Suppliers to Bovine EV Programs",
+  "total": 114
+}

@@ -17,14 +17,36 @@ const standards = [
     ],
   },
   {
-    flag: '🇺🇸',
-    title: '美國 CAB 標準',
-    subtitle: 'Certified Angus Beef · 安格斯牛肉認證',
-    description: '美國安格斯肉牛協會(AAA)於1978年設立的認證標準，僅有約2%的牛肉能通過CAB嚴格標準。評估項目包含大理石紋脂肪、成熟度、肉色與脂肪色等10項標準。',
+    flag: '🇦🇺',
+    title: '澳洲 AUS-MEAT 標準',
+    subtitle: '澳洲肉類規格管理局 · 牛肉分級系統',
+    description: '澳洲統一肉品分級制度，以0-9級評估大理石紋脂肪分布。等級越高代表脂肪交雜越均勻細緻。另有MSA指數(33-81+)評估食用品質。',
     grades: [
-      ['USDA 等級', 'Prime', 'Choice', 'Select'],
-      ['中文', '極佳級', '特選級', '可選級'],
-      ['特色', '最高品質', '高品質', '標準品質'],
+      ['等級', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+      ['大理石紋', '微量', '微量', '少量', '少量', '中量', '中量', '中量', '多量', '多量', '極多'],
+      ['特點', '精瘦', '精瘦', '基本', '基本', '風味', '風味', '風味', '多汁', '多汁', '極致'],
+    ],
+  },
+  {
+    flag: '🥩',
+    title: '澳洲和牛分級標準',
+    subtitle: 'Australian Wagyu · 澳洲和牛協會',
+    description: '澳洲和牛專屬分級，結合AUS-MEAT與日本BMS評分。大理石紋評分從4到12級，對應日本JMGA的BMS 3-12級。澳洲和牛以穀飼天數與大理石紀錄雙重認證。',
+    grades: [
+      ['澳洲和牛', 'M4', 'M5', 'M6', 'M7', 'M8', 'M9', 'M10', 'M11', 'M12'],
+      ['日式BMS', '3', '4', '5', '6', '7', '8', '9', '10', '11-12'],
+      ['油花密度', '中下', '中等', '中上', '多量', '多量', '極多', '極多', '極致', '極致'],
+    ],
+  },
+  {
+    flag: '🇺🇸',
+    title: '美國 USDA 標準',
+    subtitle: '美國農業部 · 牛肉品質等級',
+    description: '美國官方牛肉分級制度，以成熟度與大理石紋為主要評估依據。Prime等級僅占約2%，為最高品質；另有CAB(Certified Angus Beef)安格斯牛肉認證標準。',
+    grades: [
+      ['USDA等級', 'Prime', 'Choice', 'Select', 'Standard'],
+      ['中文', '極佳級', '特選級', '可選級', '標準級'],
+      ['特色', '最高品質', '高品質', '標準品質', '基本品質'],
     ],
   },
 ]
@@ -67,32 +89,34 @@ export default function StandardsSection() {
               {standard.description}
             </p>
 
-            <table className="w-full text-xs sm:text-sm border-collapse">
-              <tbody>
-                {standard.grades.map((row, rowIndex) => (
-                  <tr key={rowIndex}>
-                    {row.map((cell, cellIndex) => (
-                      <td
-                        key={cellIndex}
-                        className={`py-2 sm:py-2.5 px-2 sm:px-3 text-center border border-light-gray ${
-                          rowIndex === 0 || cellIndex === 0
-                            ? 'bg-cream font-semibold'
-                            : cell.startsWith('A')
-                            ? 'grade-a'
-                            : cell.startsWith('B')
-                            ? 'grade-b'
-                            : cell.startsWith('C')
-                            ? 'grade-c'
-                            : ''
-                        }`}
-                      >
-                        {cell}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <div className="overflow-x-auto">
+              <table className="w-full text-xs sm:text-sm border-collapse min-w-[400px]">
+                <tbody>
+                  {standard.grades.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      {row.map((cell, cellIndex) => (
+                        <td
+                          key={cellIndex}
+                          className={`py-2 sm:py-2.5 px-2 sm:px-3 text-center border border-light-gray whitespace-nowrap ${
+                            rowIndex === 0 || cellIndex === 0
+                              ? 'bg-cream font-semibold'
+                              : cell.includes('A') || cell.includes('Prime')
+                              ? 'bg-green-50 text-green-700 font-medium'
+                              : cell.includes('M4') || cell.includes('M5') || cell.includes('M6')
+                              ? 'bg-amber-50 text-amber-700'
+                              : cell.includes('M9') || cell.includes('M10') || cell.includes('M11') || cell.includes('M12')
+                              ? 'bg-red-50 text-red-700 font-medium'
+                              : ''
+                          }`}
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </motion.div>
         ))}
       </div>
