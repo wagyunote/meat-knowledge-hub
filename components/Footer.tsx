@@ -2,8 +2,8 @@ import { Github, Twitter, Mail } from 'lucide-react'
 
 const footerLinks = {
   quickLinks: [
-    { label: '產業新聞', href: '#news' },
-    { label: '知識百科', href: '#knowledge' },
+    { label: '我的和牛筆記', href: 'https://www.facebook.com/groups/mywagyunotes', external: true },
+    { label: '靠北和牛', href: 'https://www.facebook.com/groups/damnitwagyu', external: true },
     { label: '市場資訊', href: '#markets' },
     { label: '分級標準', href: '#standards' },
   ],
@@ -42,7 +42,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-white/60 hover:text-secondary transition-colors">
+                  <a href={link.href} {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="text-sm text-white/60 hover:text-secondary transition-colors">
                     {link.label}
                   </a>
                 </li>
