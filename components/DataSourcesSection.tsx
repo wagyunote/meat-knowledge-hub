@@ -7,7 +7,8 @@ const sources = [
   { icon: '📰', name: '食肉通信社', status: '同步中', url: 'https://www.shokuniku.co.jp/' },
   { icon: '📋', name: 'JMGA 格付協會', status: '同步中', url: 'https://www.jmga.or.jp/' },
   { icon: '🧬', name: '家畜改良中心', status: '同步中', url: 'https://www.id.nlbc.go.jp/' },
-  { icon: '🌐', name: '產業相關連結', status: '同步中', url: '#' },
+  { icon: '🇺🇸', name: '美國肉類出口協會', status: '同步中', url: 'https://usmef.org.tw/' },
+  { icon: '🦘', name: '澳洲和牛協會', status: '同步中', url: 'https://www.wagyu.org.au/' },
 ]
 
 export default function DataSourcesSection() {
@@ -18,7 +19,7 @@ export default function DataSourcesSection() {
         <p className="text-white/60 text-sm">本平台自動同步以下官方網站最新資訊</p>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 sm:gap-5">
         {sources.map((source, index) => (
           <motion.a
             key={source.name}

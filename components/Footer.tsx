@@ -12,11 +12,13 @@ const footerLinks = {
     { label: '食肉通信社', href: 'https://www.shokuniku.co.jp/' },
     { label: '食肉格付協會', href: 'https://www.jmga.or.jp/' },
     { label: '家畜改良中心', href: 'https://www.id.nlbc.go.jp/' },
+    { label: '美國肉類出口協會', href: 'https://usmef.org.tw/' },
+    { label: '澳洲和牛協會', href: 'https://www.wagyu.org.au/' },
   ],
   about: [
     { label: '平台介紹', href: '#' },
     { label: '使用說明', href: '#' },
-    { label: '聯絡我們', href: '#' },
+    { label: '聯絡我們', href: 'https://line.me/ti/p/+886922773140' },
     { label: '隱私政策', href: '#' },
   ],
 }

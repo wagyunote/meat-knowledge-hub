@@ -36,67 +36,42 @@ export default function Hero() {
         </motion.div>
       ))}
       
-      <div className="relative max-w-[1400px] mx-auto px-6 sm:px-10 py-20 sm:py-28 w-full">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          {/* 左側主視覺 */}
+      <div className="relative max-w-[1400px] mx-auto px-6 sm:px-10 py-12 sm:py-16 w-full">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+          {/* 左側影片嵌入 */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex-1 text-center lg:text-left"
+            className="flex-1 w-full"
           >
-            {/* 標籤 */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6"
-            >
-              <Beef className="w-4 h-4" />
-              專業肉品知識平台
-            </motion.div>
-            
-            {/* 主標題 */}
-            <h1 className="font-serif-tc text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-charcoal leading-tight mb-6">
-              <span className="text-primary">肉品</span>分級
-              <br />
-              <span className="relative">
-                一手掌握
-                <motion.div
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ delay: 0.6, duration: 0.6 }}
-                  className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-amber-500 rounded-full origin-left"
+            {/* YouTube 影片 */}
+            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl bg-charcoal">
+              <div className="aspect-video">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/_a29l6b3qMg"
+                  title="和牛高效分切技巧"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
                 />
-              </span>
-            </h1>
-            
-            {/* 副標題 */}
-            <p className="text-warm-gray text-lg sm:text-xl max-w-xl mb-8">
-              整合日本官方分級標準、全球合格設施名單
-              <br className="hidden sm:block" />
-              為您提供專業、即時的肉品產業資訊
-            </p>
-            
-            {/* CTA 按鈕 */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <motion.a
-                href="#standards"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 rounded-full gradient-meat text-white font-medium text-base shadow-lg hover:shadow-xl transition-shadow"
-              >
-                查看分級標準
-              </motion.a>
-              <motion.a
-                href="#markets"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 rounded-full bg-white text-primary font-medium text-base shadow-md hover:shadow-lg transition-shadow border border-primary/20"
-              >
-                查詢合格設施
-              </motion.a>
+              </div>
             </div>
+            
+            {/* 影片說明 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="mt-4 text-center"
+            >
+              <h2 className="font-serif-tc text-2xl sm:text-3xl font-bold text-charcoal mb-2">
+                🎬 和牛高效分切技巧
+              </h2>
+              <p className="text-warm-gray text-sm">
+                專業分切技巧完整版影片 · 建議使用電腦或平板觀看
+              </p>
+            </motion.div>
           </motion.div>
           
           {/* 右側功能卡 */}
@@ -154,6 +129,31 @@ export default function Hero() {
                 </div>
               </div>
             </motion.div>
+            
+            {/* CTA 按鈕 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="mt-6 flex flex-col sm:flex-row gap-4"
+            >
+              <motion.a
+                href="#standards"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="flex-1 px-6 py-3 rounded-full gradient-meat text-white font-medium text-center shadow-lg hover:shadow-xl transition-shadow"
+              >
+                查看分級標準
+              </motion.a>
+              <motion.a
+                href="#markets"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="flex-1 px-6 py-3 rounded-full bg-white text-primary font-medium text-center shadow-md hover:shadow-lg transition-shadow border border-primary/20"
+              >
+                查詢合格設施
+              </motion.a>
+            </motion.div>
           </motion.div>
         </div>
         
@@ -165,7 +165,7 @@ export default function Hero() {
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
           <motion.a
-            href="#news"
+            href="#handbooks"
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
             className="flex flex-col items-center text-primary/60 hover:text-primary transition-colors"
