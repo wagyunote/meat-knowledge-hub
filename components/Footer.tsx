@@ -18,7 +18,7 @@ const footerLinks = {
   about: [
     { label: '平台介紹', href: '#' },
     { label: '使用說明', href: '#' },
-    { label: '聯絡我們', href: 'https://line.me/ti/p/+886922773140' },
+    { label: '聯絡我們', href: 'https://line.me/ti/p/@273roowq' },
     { label: '隱私政策', href: '#' },
   ],
 }
