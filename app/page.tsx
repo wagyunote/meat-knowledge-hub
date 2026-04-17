@@ -3,6 +3,7 @@ import Hero from '@/components/Hero'
 import HandbookSection from '@/components/HandbookSection'
 import StandardsSection from '@/components/StandardsSection'
 import MarketsSection from '@/components/MarketsSection'
+import AUWagyuBrandsSection from '@/components/AUWagyuBrandsSection'
 import USFacilitiesSection from '@/components/USFacilitiesSection'
 import FAQSection from '@/components/FAQSection'
 import AUFactorySection from '@/components/AUFactorySection'
@@ -20,6 +21,9 @@ export default function Home() {
         
         {/* 分級標準 */}
         <StandardsSection />
+
+        {/* 澳洲和牛品牌 */}
+        <AUWagyuBrandsSection />
         
         {/* 設施查詢 */}
         <section className="mb-16 sm:mb-20">

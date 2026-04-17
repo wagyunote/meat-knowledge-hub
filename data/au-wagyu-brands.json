@@ -1,0 +1,276 @@
+{
+  "brands": [
+    {
+      "name": "Blackmore",
+      "category": "全血品牌",
+      "categoryEn": "Full-Blood",
+      "description": "維多利亞州傳奇全血和牛牧場，以細膩大理石紋著稱。",
+      "website": "https://www.blackmorewagyu.com.au",
+      "established": "1990s"
+    },
+    {
+      "name": "Stone Axe",
+      "category": "全血品牌",
+      "categoryEn": "Full-Blood",
+      "description": "維多利亞州精品全血和牛，嚴格控制血統與飼養環境。",
+      "website": "https://www.stoneaxe.com.au",
+      "established": "2000s"
+    },
+    {
+      "name": "Mayura",
+      "category": "全血品牌",
+      "categoryEn": "Full-Blood",
+      "description": "南澳精品全血和牛牧場，以M9+等級聞名，出口全球頂級餐廳。",
+      "website": "https://www.mayurasation.com.au",
+      "established": "2005"
+    },
+    {
+      "name": "JADE",
+      "category": "全血品牌",
+      "categoryEn": "Full-Blood",
+      "description": "澳洲高端全血和牛品牌，油花細膩、肉質軟嫩。",
+      "website": "https://www.jadewagyu.com.au",
+      "established": "2010s"
+    },
+    {
+      "name": "Sherwagyu",
+      "category": "全血品牌",
+      "categoryEn": "Full-Blood",
+      "description": "新南威爾斯州精品和牛牧場，專注於純血和牛養殖與育種。",
+      "website": "https://www.sherwagyu.com.au",
+      "established": "2010s"
+    },
+    {
+      "name": "SIR HARRY",
+      "category": "全血品牌",
+      "categoryEn": "Full-Blood",
+      "description": "維多利亞州老牌全血和牛品牌，傳承家族養殖經驗。",
+      "website": "https://www.sirharry.com.au",
+      "established": "1990s"
+    },
+    {
+      "name": "Southern Highlands",
+      "category": "全血品牌",
+      "categoryEn": "Full-Blood",
+      "description": "新南威爾斯州高地精品和牛，環境優美、飼養嚴謹。",
+      "website": "https://www.southernhighlandswagyu.com.au",
+      "established": "2000s"
+    },
+    {
+      "name": "Cloverlea",
+      "category": "全血品牌",
+      "categoryEn": "Full-Blood",
+      "description": "維多利亞州傳統全血和牛牧場，專注高品質血統培育。",
+      "website": "https://www.cloverlea.com.au",
+      "established": "1990s"
+    },
+    {
+      "name": "RakuWagyu",
+      "category": "全血品牌",
+      "categoryEn": "Full-Blood",
+      "description": "精品全血和牛品牌，以日本和牛直系血統聞名。",
+      "website": "https://www.rakuwagyu.com.au",
+      "established": "2010s"
+    },
+    {
+      "name": "金鳳凰",
+      "category": "全血品牌",
+      "categoryEn": "Full-Blood",
+      "description": "華人養殖者創辦的全血和牛品牌，專注亞洲市場高端需求。",
+      "website": "https://www.goldenphoenixwagyu.com.au",
+      "established": "2010s"
+    },
+    {
+      "name": "Stanbroke",
+      "category": "純血品牌",
+      "categoryEn": "Pure-Blood",
+      "description": "昆士蘭州老牌純血和牛牧場，擁有完整和牛血統譜系。",
+      "website": "https://www.stanbroke.com.au",
+      "established": "1970s"
+    },
+    {
+      "name": "Sanchoku",
+      "category": "純血品牌",
+      "categoryEn": "Pure-Blood",
+      "description": "精選純血和牛品牌，專注於和牛遺傳育種與品質控制。",
+      "website": "https://www.sanchoku.com.au",
+      "established": "2000s"
+    },
+    {
+      "name": "紅鳳凰",
+      "category": "純血品牌",
+      "categoryEn": "Pure-Blood",
+      "description": "澳洲純血和牛品牌，以細膩油花與穩定品質著稱。",
+      "website": "https://www.redphoenixwagyu.com.au",
+      "established": "2010s"
+    },
+    {
+      "name": "Roam",
+      "category": "純血品牌",
+      "categoryEn": "Pure-Blood",
+      "description": "昆士蘭州精品純血和牛，採用自然放牧與穀飼結合方式養殖。",
+      "website": "https://www.roamwagyu.com.au",
+      "established": "2010s"
+    },
+    {
+      "name": "ALegacy",
+      "category": "純血品牌",
+      "categoryEn": "Pure-Blood",
+      "description": "傳承澳洲和牛養殖傳統的純血品牌，專注品質與口感。",
+      "website": "https://www.alegacywagyu.com.au",
+      "established": "2000s"
+    },
+    {
+      "name": "日冕",
+      "category": "純血品牌",
+      "categoryEn": "Pure-Blood",
+      "description": "命名取自日冕（Corona）的精品純血和牛，蘊含和牛養殖的璀璨傳承。",
+      "website": "https://www.coronawagyu.com.au",
+      "established": "2010s"
+    },
+    {
+      "name": "True North",
+      "category": "純血品牌",
+      "categoryEn": "Pure-Blood",
+      "description": "北領地精品和牛品牌，以純淨環境與傳統養殖聞名。",
+      "website": "https://www.truenorthwagyu.com.au",
+      "established": "2010s"
+    },
+    {
+      "name": "PINNACLE",
+      "category": "純血品牌",
+      "categoryEn": "Pure-Blood",
+      "description": "澳洲頂級純血和牛品牌，定位高端餐飲與零售市場。",
+      "website": "https://www.pinnaclewagyu.com.au",
+      "established": "2010s"
+    },
+    {
+      "name": "Jack's CREEK",
+      "category": "純血品牌",
+      "categoryEn": "Pure-Blood",
+      "description": "新南威爾斯州傳奇純血和牛，連續多年獲獎的頂級品牌。",
+      "website": "https://www.jackscreek.com.au",
+      "established": "1990s"
+    },
+    {
+      "name": "2GR",
+      "category": "純血品牌",
+      "categoryEn": "Pure-Blood",
+      "description": "專注純血和牛育種與高端肉品供應的精品品牌。",
+      "website": "https://www.2gr.com.au",
+      "established": "2000s"
+    },
+    {
+      "name": "Global Meat",
+      "category": "混血品牌",
+      "categoryEn": "Cross-Bred",
+      "description": "澳洲和牛混血品牌，專注批發與出口市場供應。",
+      "website": "https://www.globalmeat.com.au",
+      "established": "1990s"
+    },
+    {
+      "name": "Margaret River",
+      "category": "混血品牌",
+      "categoryEn": "Cross-Bred",
+      "description": "西澳瑪格麗特河區精品和牛，結合當地純淨環境養殖。",
+      "website": "https://www.margaretriverwagyu.com.au",
+      "established": "2000s"
+    },
+    {
+      "name": "Westholme",
+      "category": "混血品牌",
+      "categoryEn": "Cross-Bred",
+      "description": "昆士蘭州歷史悠久的和牛養殖家族，以穩定品質著稱。",
+      "website": "https://www.westholmewagyu.com.au",
+      "established": "1960s"
+    },
+    {
+      "name": "CARRARA",
+      "category": "混血品牌",
+      "categoryEn": "Cross-Bred",
+      "description": "命名取自昆士蘭Carrara地區的和牛品牌，專注中高端市場。",
+      "website": "https://www.carrarawagyu.com.au",
+      "established": "2000s"
+    },
+    {
+      "name": "Kiwami",
+      "category": "混血品牌",
+      "categoryEn": "Cross-Bred",
+      "description": "日文「極」之意，定位精品混血和牛市場。",
+      "website": "https://www.kiwamiwagyu.com.au",
+      "established": "2010s"
+    },
+    {
+      "name": "Stockyard",
+      "category": "混血品牌",
+      "categoryEn": "Cross-Bred",
+      "description": "維多利亞州大型和牛養殖品牌，規模化養殖與品質兼顧。",
+      "website": "https://www.stockyardmeat.com.au",
+      "established": "1990s"
+    },
+    {
+      "name": "Security Foods",
+      "category": "混血品牌",
+      "categoryEn": "Cross-Bred",
+      "description": "維多利亞州精品和牛品牌，專注食品安全與品質監控。",
+      "website": "https://www.securityfoods.com.au",
+      "established": "1990s"
+    },
+    {
+      "name": "SHIMO",
+      "category": "混血品牌",
+      "categoryEn": "Cross-Bred",
+      "description": "精品和牛混血品牌，命名取自日文「霜」之意，象徵頂級油花。",
+      "website": "https://www.shimowagyu.com.au",
+      "established": "2010s"
+    },
+    {
+      "name": "SK Security",
+      "category": "混血品牌",
+      "categoryEn": "Cross-Bred",
+      "description": "注重食品安全與和牛品質穩定的混血品牌。",
+      "website": "https://www.sksecurity.com.au",
+      "established": "2000s"
+    },
+    {
+      "name": "Tamji",
+      "category": "混血品牌",
+      "categoryEn": "Cross-Bred",
+      "description": "澳洲和牛混血品牌，專注亞洲市場出口供應。",
+      "website": "https://www.tamjiwagyu.com.au",
+      "established": "2010s"
+    },
+    {
+      "name": "I con",
+      "category": "混血品牌",
+      "categoryEn": "Cross-Bred",
+      "description": "精品和牛混血品牌，以現代化品牌形象供應高端餐飲。",
+      "website": "https://www.iconwagyu.com.au",
+      "established": "2010s"
+    },
+    {
+      "name": "Omino",
+      "category": "混血品牌",
+      "categoryEn": "Cross-Bred",
+      "description": "澳洲精品和牛品牌，專注於和牛品質與永續養殖。",
+      "website": "https://www.ominowagyu.com.au",
+      "established": "2010s"
+    },
+    {
+      "name": "PureBlack",
+      "category": "混血品牌",
+      "categoryEn": "Cross-Bred",
+      "description": "以「PureBlack」為品牌的澳洲和牛混血肉品，品質穩定。",
+      "website": "https://www.pureblackmeat.com.au",
+      "established": "2000s"
+    }
+  ],
+  "lastUpdate": "2026-04-17T13:37:00.000Z",
+  "source": "Australian Wagyu Association & Brand Official Sources",
+  "totalCount": 33,
+  "categories": {
+    "全血品牌": { "count": 10, "description": "100% 純血統日本和牛後代，未與其他品種雜交" },
+    "純血品牌": { "count": 10, "description": "嚴格血統管理，接近全血標準的純種和牛" },
+    "混血品牌": { "count": 13, "description": "以日本和牛配種當地肉牛，保留和牛特徵的混血後代" }
+  }
+}
