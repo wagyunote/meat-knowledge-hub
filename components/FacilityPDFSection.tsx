@@ -16,14 +16,24 @@ interface FacilityPDF {
 
 const facilityPDFs: FacilityPDF[] = [
   {
-    title: '美國牛肉出口驗證設施',
-    title_en: 'US Beef EV Facilities',
-    file: './LSOfficialListingEVProgram.pdf',
+    title: '日本牛肉核准輸入設施',
+    title_en: 'Japan Beef Import Facilities',
+    file: './日本牛肉核准輸入設施.pdf',
+    count: 37,
+    update: '2026.3.10',
+    color: 'from-red-500 to-red-700',
+    icon: '🇯🇵',
+    note: '台灣輸入查驗用核准工廠名單'
+  },
+  {
+    title: '美國牛肉屠宰指南',
+    title_en: 'US Beef Slaughter Guide',
+    file: './美國牛肉屠宰指南.pdf',
     count: 114,
     update: '2026.4.13',
     color: 'from-blue-500 to-blue-700',
     icon: '🇺🇸',
-    note: 'USDA 官方 EV Program 列表'
+    note: 'USDA 官方屠宰指南與設施列表'
   },
   {
     title: '澳洲肉品工廠名單',
@@ -56,7 +66,7 @@ export default function FacilityPDFSection() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+      <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
         {facilityPDFs.map((pdf, index) => (
           <motion.div
             key={pdf.file}
