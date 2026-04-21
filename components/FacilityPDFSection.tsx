@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FileText, Download, Eye, Building2 } from 'lucide-react'
+import { Download, Eye, Building2 } from 'lucide-react'
 
 interface FacilityPDF {
   title: string
@@ -11,35 +11,29 @@ interface FacilityPDF {
   update: string
   color: string
   icon: string
+  note?: string
 }
 
 const facilityPDFs: FacilityPDF[] = [
   {
-    title: '日本牛肉核准輸入設施',
-    title_en: 'Japan Beef Import Facilities',
-    file: './日本牛肉核准輸入設施.pdf',
-    count: 37,
-    update: '2026.3.10',
-    color: 'from-red-500 to-red-700',
-    icon: '🇯🇵'
-  },
-  {
     title: '美國牛肉出口驗證設施',
     title_en: 'US Beef EV Facilities',
-    file: './美國牛肉出口驗證設施.pdf',
+    file: './LSOfficialListingEVProgram.pdf',
     count: 114,
     update: '2026.4.13',
     color: 'from-blue-500 to-blue-700',
-    icon: '🇺🇸'
+    icon: '🇺🇸',
+    note: 'USDA 官方 EV Program 列表'
   },
   {
-    title: '澳洲肉品工廠查詢',
+    title: '澳洲肉品工廠名單',
     title_en: 'Australian Meat Factories',
-    file: './澳洲肉品工廠查詢.pdf',
+    file: './AU-經我國核准之澳洲肉品工廠名單-系統認證-6-Feb-2026.pdf',
     count: 20,
     update: '2026.2.6',
     color: 'from-green-500 to-green-700',
-    icon: '🇦🇺'
+    icon: '🇦🇺',
+    note: '經我國核准之澳洲肉品工廠（系統認證）'
   },
 ]
 
@@ -62,7 +56,7 @@ export default function FacilityPDFSection() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
+      <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
         {facilityPDFs.map((pdf, index) => (
           <motion.div
             key={pdf.file}
@@ -114,6 +108,10 @@ export default function FacilityPDFSection() {
                 {pdf.update} 更新
               </span>
             </div>
+            {/* 說明 */}
+            {pdf.note && (
+              <p className="text-xs text-warm-gray/70 mt-2">{pdf.note}</p>
+            )}
           </motion.div>
         ))}
       </div>
