@@ -26,14 +26,14 @@ const facilityPDFs: FacilityPDF[] = [
     note: '台灣輸入查驗用核准工廠名單'
   },
   {
-    title: '美國牛肉屠宰指南',
-    title_en: 'US Beef Slaughter Guide',
-    file: './美國牛肉屠宰指南.pdf',
+    title: '美國牛肉屠宰設施',
+    title_en: 'US Beef Slaughter Facilities',
+    file: './LSOfficialListingEVProgram.pdf',
     count: 114,
-    update: '2026.4.13',
+    update: '2026.4.23',
     color: 'from-blue-500 to-blue-700',
     icon: '🇺🇸',
-    note: 'USDA 官方屠宰指南與設施列表'
+    note: 'USDA 官方屠宰設施列表（EV Program）'
   },
   {
     title: '澳洲肉品工廠名單',
