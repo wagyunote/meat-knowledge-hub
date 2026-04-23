@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { ChevronDown, Beef, Award, Globe2, TrendingUp } from 'lucide-react'
@@ -38,23 +38,27 @@ export default function Hero() {
       
       <div className="relative max-w-[1400px] mx-auto px-6 sm:px-10 py-12 sm:py-16 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-          {/* 左側牛肉分切圖片 */}
+          {/* 左側影片嵌入 */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="flex-1 w-full"
           >
-            {/* 牛肉分切圖片 */}
+            {/* YouTube 影片 */}
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl bg-charcoal">
-              <img
-                src="/premium-meat-cuts.png"
-                alt="優質牛肉分切部位圖"
-                className="w-full h-auto object-cover"
-              />
+              <div className="aspect-video">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/_a29l6b3qMg"
+                  title="和牛高效分切技巧"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
             </div>
             
-            {/* 圖片說明 */}
+            {/* 影片說明 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -62,10 +66,10 @@ export default function Hero() {
               className="mt-4 text-center"
             >
               <h2 className="font-serif-tc text-2xl sm:text-3xl font-bold text-charcoal mb-2">
-                🥩 牛肉分切部位指南
+                🎬 和牛高效分切技巧
               </h2>
               <p className="text-warm-gray text-sm">
-                各部位名稱、特性和最佳烹飪方式
+                專業分切技巧完整版影片 · 建議使用電腦或平板觀看
               </p>
             </motion.div>
           </motion.div>
